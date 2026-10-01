@@ -6,8 +6,8 @@ sector: "Patrimonio y hostelería"
 cliente: ""
 ubicacion: "España"
 resumen: "Ingeniería y presupuesto de líneas de vida y puntos de anclaje compatibles con la protección patrimonial del inmueble."
-imagen: ""
-imagen_alt: ""
+imagen: "src/content/proyectos/Logo Proyecto si fondo.JPG"
+imagen_alt: "Imagen de proyecto"
 ---
 
 ## Reto
