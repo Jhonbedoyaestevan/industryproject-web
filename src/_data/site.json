@@ -1,12 +1,14 @@
 {
   "marca": "Industry Project",
+  "logo": "/assets/img/logo.png",
+  "logo_alt": "Logotipo de Industry Project",
   "lema": "Ingeniería · Peritaje · Consultoría económica",
   "descripcion": "Industry Project: bufete de ingeniería y economistas. Proyectos técnicos, peritajes, seguridad industrial, gestión de proyectos y consultoría económica para empresas en España y Estados Unidos.",
   "nombre": "Ing. Jhon Estevan Bedoya Bedoya",
   "cargo": "Director técnico · Ingeniero especialista en seguridad industrial y gestión de proyectos",
   "titular": "Decisiones técnicas y económicas respaldadas por normativa, datos y experiencia de campo",
   "subtitulo": "Más de doce años en ingeniería industrial, respuesta a emergencias y dirección de proyectos en Europa y Latinoamérica. Convertimos requisitos normativos complejos en soluciones viables y rentables.",
-  "foto": "/activos/imagen/IMAGEN PW.png",
+  "foto": "/assets/img/IMAGEN PW.png",
   "foto_alt": "Retrato profesional de Jhon Estevan Bedoya Bedoya",
   "credenciales": [
     "IRATA Nivel 3",
