@@ -4,8 +4,8 @@ date: 2026-09-28
 draft: false
 categoria: "Seguridad industrial"
 resumen: "Requisitos de diseño, certificación e inspección periódica de sistemas anticaídas permanentes conforme a UNE-EN 795 y la normativa de prevención aplicable."
-imagen: ""
-imagen_alt: ""
+imagen: "/assets/img/Logo Proyecto si fondo.JPG"
+imagen_alt: "Imagen de proyecto"
 ---
 
 Las líneas de vida permanentes son equipos de protección colectiva frente a caídas cuyo diseño, instalación y mantenimiento deben justificarse técnicamente.
