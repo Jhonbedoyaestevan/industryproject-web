@@ -22,4 +22,4 @@ Diseño de sistema mixto (línea horizontal + anclajes puntuales), cálculo de f
 
 Propuesta técnico-económica aprobada para su ejecución.
 
-*Proyecto de ejemplo: no publique el nombre de clientes sin su autorización expresa por escrito.*
+*Proyecto de ejemplo: no publicamos el nombre de clientes sin su autorización expresa por escrito.*
