@@ -13,6 +13,8 @@
     "ITRA Nivel 3",
     "PMP® · PMI",
     "NFPA 1041",
+    "ESPECIALISTA B&I",
+    "AUTOMATIZACION Y GESTION B2B",
     "USAID/OFDA CPI"
   ],
   "servicios": [
@@ -24,7 +26,7 @@
     {
       "titulo": "Peritajes técnicos",
       "icono": "lupa",
-      "descripcion": "Informes periciales de parte, análisis de siniestros e incidentes, inspecciones y dictámenes técnicos documentados."
+      "descripcion": "Informes periciales de parte, Informes tecnicos de Accidentes de trabjos por tareas de alto riesgo, análisis de siniestros e incidentes, inspecciones y dictámenes técnicos documentados."
     },
     {
       "titulo": "Consultoría económica",
@@ -44,13 +46,13 @@
     {
       "titulo": "Trabajos en altura y rescate",
       "icono": "cuerda",
-      "descripcion": "Ingeniería de accesos por cuerda, líneas de vida, planes de rescate y espacios confinados conforme a IRATA/ITRA."
+      "descripcion": "Ingeniería de accesos por cuerda, líneas de vida, planes de rescate y espacios confinados conforme al RD/2177/04, LEY 31/95 Y IRATA/ITRA."
     }
   ],
   "redes": {
     "linkedin": "https://www.linkedin.com/in/ingindutrial",
     "whatsapp": "+34 643 99 36 60",
-    "email": "contacto@industryproject.net",
+    "email": "jhon@industryproject.net",
     "x": "",
     "instagram": "",
     "youtube": "",
@@ -58,10 +60,10 @@
   },
   "legal": {
     "titular": "Jhon Estevan Bedoya Bedoya",
-    "nif": "[NIF/CIF PENDIENTE]",
-    "forma_juridica": "Profesional autónomo",
-    "domicilio": "[Domicilio profesional completo], Vigo (Pontevedra), España",
-    "email_privacidad": "privacidad@industryproject.net",
+    "nif": "60155323--",
+    "forma_juridica": "Profesionl Independiente",
+    "domicilio": " Av Galicia 68, As Pontes, España",
+    "email_privacidad": "jhon@industryproject.net",
     "registro_mercantil": "",
     "colegio_profesional": "",
     "titulo_profesional": "",
