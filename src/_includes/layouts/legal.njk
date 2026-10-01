@@ -1,0 +1,13 @@
+---
+layout: layouts/base.njk
+---
+<section class="page-hero">
+  <div class="container container-narrow">
+    <nav class="breadcrumb" aria-label="Migas de pan"><a href="/">Inicio</a> <span aria-hidden="true">/</span> Legal</nav>
+    <h1>{{ title }}</h1>
+    <p class="legal-meta">Versión {{ site.legal.version_politicas }} · Última actualización: {{ site.legal.fecha_politicas | fechaES }}</p>
+  </div>
+</section>
+<div class="container container-narrow prose">
+  {{ content | safe }}
+</div>

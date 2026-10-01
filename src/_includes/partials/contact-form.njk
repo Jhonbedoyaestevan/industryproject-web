@@ -1,0 +1,85 @@
+{#-
+  Formulario de contacto.
+  - Envío a Cloudflare Worker (WORKER_URL/contact) que verifica Turnstile en servidor.
+  - Sin claves secretas en el cliente: solo la sitekey PÚBLICA de Turnstile.
+  - Sin action/método GET: si JS está desactivado, no se envía nada (sin fuga de datos en URL).
+-#}
+{% set endpoint = (env.workerUrl + "/contact") if env.workerUrl else "" %}
+<form class="contact-form" id="contact-form" novalidate
+      data-endpoint="{{ endpoint }}"
+      data-sitekey="{{ env.turnstileSiteKey }}"
+      data-policy-version="{{ site.legal.version_politicas }}">
+  <div class="form-grid">
+    <div class="field">
+      <label for="cf-nombre">Nombre y apellidos <span aria-hidden="true">*</span></label>
+      <input id="cf-nombre" name="nombre" type="text" autocomplete="name" required minlength="2" maxlength="100">
+    </div>
+    <div class="field">
+      <label for="cf-empresa">Empresa</label>
+      <input id="cf-empresa" name="empresa" type="text" autocomplete="organization" maxlength="120">
+    </div>
+    <div class="field">
+      <label for="cf-email">Correo electrónico <span aria-hidden="true">*</span></label>
+      <input id="cf-email" name="email" type="email" autocomplete="email" required maxlength="254">
+    </div>
+    <div class="field">
+      <label for="cf-telefono">Teléfono</label>
+      <input id="cf-telefono" name="telefono" type="tel" autocomplete="tel" maxlength="30" pattern="[0-9+()\s.\-]{6,30}">
+    </div>
+    <div class="field field-full">
+      <label for="cf-servicio">Servicio de interés <span aria-hidden="true">*</span></label>
+      <select id="cf-servicio" name="servicio" required>
+        <option value="">Seleccione una opción</option>
+        {% for s in site.servicios %}<option value="{{ s.titulo }}">{{ s.titulo }}</option>{% endfor %}
+        <option value="Otro">Otro</option>
+      </select>
+    </div>
+    <div class="field field-full">
+      <label for="cf-mensaje">Mensaje <span aria-hidden="true">*</span></label>
+      <textarea id="cf-mensaje" name="mensaje" rows="5" required minlength="10" maxlength="3000"
+        aria-describedby="cf-mensaje-ayuda"></textarea>
+      <small id="cf-mensaje-ayuda">No incluya datos de salud, datos bancarios ni otros datos sensibles.</small>
+    </div>
+
+    {# Honeypot anti-bots: invisible para personas, ignorado por lectores de pantalla #}
+    <div class="hp" aria-hidden="true">
+      <label for="cf-web">No rellenar</label>
+      <input id="cf-web" name="web" type="text" tabindex="-1" autocomplete="off">
+    </div>
+
+    <div class="field field-full check">
+      <input id="cf-privacidad" name="privacidad" type="checkbox" required>
+      <label for="cf-privacidad">He leído y acepto la <a href="/privacidad/" target="_blank" rel="noopener">Política de privacidad</a> y consiento el tratamiento de mis datos para atender esta consulta. <span aria-hidden="true">*</span></label>
+    </div>
+    <div class="field field-full check">
+      <input id="cf-comercial" name="comercial" type="checkbox">
+      <label for="cf-comercial">(Opcional) Deseo recibir comunicaciones profesionales por correo electrónico. Le enviaremos un correo para que confirme su suscripción (doble opt-in) y podrá darse de baja en cualquier momento.</label>
+    </div>
+
+    <div class="field field-full">
+      <div id="turnstile-container" class="turnstile-box"></div>
+    </div>
+  </div>
+
+  {# Información básica de protección de datos — 1.ª capa (art. 11 LOPDGDD) #}
+  <table class="info-basica">
+    <caption>Información básica sobre protección de datos</caption>
+    <tbody>
+      <tr><th scope="row">Responsable</th><td>{{ site.legal.titular }}</td></tr>
+      <tr><th scope="row">Finalidad</th><td>Responder a su consulta, gestionar su contacto, enviarle un acuse de recibo y, solo si lo solicita y confirma, comunicaciones profesionales.</td></tr>
+      <tr><th scope="row">Legitimación</th><td>Su consentimiento (art. 6.1.a RGPD) y medidas precontractuales a su solicitud (art. 6.1.b RGPD).</td></tr>
+      <tr><th scope="row">Destinatarios</th><td>Proveedores tecnológicos que actúan como encargados (Cloudflare, Brevo). No se ceden datos a terceros salvo obligación legal.</td></tr>
+      <tr><th scope="row">Derechos</th><td>Acceso, rectificación, supresión, oposición, limitación y portabilidad: {{ site.legal.email_privacidad }}</td></tr>
+      <tr><th scope="row">Más información</th><td><a href="/privacidad/">Política de privacidad</a></td></tr>
+    </tbody>
+  </table>
+
+  <div class="form-actions">
+    <button type="submit" class="btn btn-primary" id="cf-submit">Enviar consulta</button>
+    <p class="form-status" id="cf-status" role="status" aria-live="polite"></p>
+  </div>
+  {% if not endpoint %}
+  <p class="form-warning">El formulario se activará cuando se configure la variable <code>WORKER_URL</code>.</p>
+  {% endif %}
+</form>
+<script src="/assets/js/contact.js" defer></script>

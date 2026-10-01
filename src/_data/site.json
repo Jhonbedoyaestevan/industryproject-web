@@ -1,0 +1,73 @@
+{
+  "marca": "Industry Project",
+  "lema": "Ingeniería · Peritaje · Consultoría económica",
+  "descripcion": "Industry Project: bufete de ingeniería y economistas. Proyectos técnicos, peritajes, seguridad industrial, gestión de proyectos y consultoría económica para empresas en España y Estados Unidos.",
+  "nombre": "Ing. Jhon Estevan Bedoya Bedoya",
+  "cargo": "Director técnico · Ingeniero especialista en seguridad industrial y gestión de proyectos",
+  "titular": "Decisiones técnicas y económicas respaldadas por normativa, datos y experiencia de campo",
+  "subtitulo": "Más de doce años en ingeniería industrial, respuesta a emergencias y dirección de proyectos en Europa y Latinoamérica. Convertimos requisitos normativos complejos en soluciones viables y rentables.",
+  "foto": "/assets/img/perfil-placeholder.svg",
+  "foto_alt": "Retrato profesional del director técnico del bufete",
+  "credenciales": [
+    "IRATA Nivel 3",
+    "ITRA Nivel 3",
+    "PMP® · PMI",
+    "NFPA 1041",
+    "USAID/OFDA CPI"
+  ],
+  "servicios": [
+    {
+      "titulo": "Ingeniería industrial",
+      "icono": "engranaje",
+      "descripcion": "Proyectos técnicos, adecuación de instalaciones y maquinaria, estudios de viabilidad y legalizaciones industriales."
+    },
+    {
+      "titulo": "Peritajes técnicos",
+      "icono": "lupa",
+      "descripcion": "Informes periciales de parte, análisis de siniestros e incidentes, inspecciones y dictámenes técnicos documentados."
+    },
+    {
+      "titulo": "Consultoría económica",
+      "icono": "grafico",
+      "descripcion": "Análisis de inversiones (CAPEX/OPEX), estudios de costes, valoraciones y viabilidad económico-financiera de proyectos."
+    },
+    {
+      "titulo": "Seguridad industrial y PRL",
+      "icono": "escudo",
+      "descripcion": "Evaluación de riesgos, planes de emergencia y autoprotección, auditorías de cumplimiento y formación técnica."
+    },
+    {
+      "titulo": "Gestión de proyectos",
+      "icono": "tablero",
+      "descripcion": "Dirección y control de proyectos bajo estándares PMI: alcance, plazos, costes, riesgos y cierre documentado."
+    },
+    {
+      "titulo": "Trabajos en altura y rescate",
+      "icono": "cuerda",
+      "descripcion": "Ingeniería de accesos por cuerda, líneas de vida, planes de rescate y espacios confinados conforme a IRATA/ITRA."
+    }
+  ],
+  "redes": {
+    "linkedin": "https://www.linkedin.com/in/ingindutrial",
+    "whatsapp": "+34 643 99 36 60",
+    "email": "contacto@industryproject.net",
+    "x": "",
+    "instagram": "",
+    "youtube": "",
+    "facebook": ""
+  },
+  "legal": {
+    "titular": "Jhon Estevan Bedoya Bedoya",
+    "nif": "[NIF/CIF PENDIENTE]",
+    "forma_juridica": "Profesional autónomo",
+    "domicilio": "[Domicilio profesional completo], Vigo (Pontevedra), España",
+    "email_privacidad": "privacidad@industryproject.net",
+    "registro_mercantil": "",
+    "colegio_profesional": "",
+    "titulo_profesional": "",
+    "dpd": "",
+    "representante_ue": "",
+    "version_politicas": "1.1",
+    "fecha_politicas": "2026-10-01"
+  }
+}

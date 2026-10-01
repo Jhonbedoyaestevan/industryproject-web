@@ -1,0 +1,12 @@
+---
+layout: layouts/base.njk
+title: Proyectos
+pagination:
+  data: collections.proyectos
+  size: 9
+  alias: items
+permalink: "/proyectos/{% if pagination.pageNumber > 0 %}pagina/{{ pagination.pageNumber + 1 }}/{% endif %}"
+---
+{% set seccion = "proyectos" %}{% set seccionTitulo = "Proyectos" %}
+{% set seccionIntro = "Selección de trabajos realizados en ingeniería, peritaje y consultoría económica." %}
+{% include "partials/listing.njk" %}

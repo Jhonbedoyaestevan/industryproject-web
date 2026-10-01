@@ -1,0 +1,18 @@
+{#- Tarjeta reutilizable para noticias y proyectos. Requiere variable `item`. -#}
+<article class="card">
+  <a class="card-media" href="{{ item.url }}" tabindex="-1" aria-hidden="true">
+    {% if item.data.imagen %}
+      <img src="{{ item.data.imagen }}" alt="" loading="lazy" decoding="async" width="640" height="400">
+    {% else %}
+      <span class="card-media-placeholder"></span>
+    {% endif %}
+  </a>
+  <div class="card-body">
+    {% set etiqueta = item.data.categoria or item.data.sector %}
+    {% if etiqueta %}<span class="chip">{{ etiqueta }}</span>{% endif %}
+    <h3 class="card-title"><a href="{{ item.url }}">{{ item.data.title }}</a></h3>
+    <time class="card-date" datetime="{{ item.date | isoDate }}">{{ item.date | fechaES }}</time>
+    {% if item.data.resumen %}<p class="card-excerpt">{{ item.data.resumen }}</p>{% endif %}
+    <a class="card-more" href="{{ item.url }}">Leer más <span class="sr-only">sobre {{ item.data.title }}</span>→</a>
+  </div>
+</article>

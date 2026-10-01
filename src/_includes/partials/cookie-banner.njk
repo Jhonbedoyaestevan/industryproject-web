@@ -1,0 +1,44 @@
+{#-
+  Banner de consentimiento — capa 1 + panel de configuración (capa 2 en /cookies/).
+  Criterios: Guía AEPD sobre cookies (jul. 2023) y Directrices CEPD 03/2022:
+  "Aceptar" y "Rechazar" con igual jerarquía visual, sin casillas premarcadas,
+  sin muro de cookies, revocable en cualquier momento desde el pie de página.
+-#}
+<div class="consent" id="consent-banner" role="dialog" aria-modal="false" aria-labelledby="consent-title" aria-describedby="consent-desc" hidden>
+  <div class="consent-inner">
+    <h2 id="consent-title" class="consent-title">Su privacidad</h2>
+    <p id="consent-desc">
+      Usamos almacenamiento técnico imprescindible para que el sitio funcione y recordar su elección.
+      Con su permiso, activaremos una analítica de audiencia <strong>sin cookies</strong> (Cloudflare Web Analytics)
+      para contar visitas de forma agregada. No usamos publicidad, perfiles ni venta de datos.
+      <a href="/cookies/">Más información</a>.
+    </p>
+
+    <div class="consent-panel" id="consent-panel" hidden>
+      <fieldset>
+        <legend class="sr-only">Categorías</legend>
+        <div class="consent-row">
+          <div>
+            <strong>Técnicas (necesarias)</strong>
+            <p>Recuerdan su elección de privacidad y protegen el formulario frente a spam (Cloudflare Turnstile). Exentas de consentimiento (art. 22.2 LSSI-CE).</p>
+          </div>
+          <input type="checkbox" checked disabled aria-label="Técnicas, siempre activas">
+        </div>
+        <div class="consent-row">
+          <div>
+            <label for="consent-analytics"><strong>Analítica de audiencia</strong></label>
+            <p>Estadísticas agregadas de visitas sin cookies ni identificadores persistentes.</p>
+          </div>
+          <input type="checkbox" id="consent-analytics" name="analytics">
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="consent-actions">
+      <button type="button" class="btn btn-consent" data-consent="reject">Rechazar</button>
+      <button type="button" class="btn btn-consent" data-consent="accept">Aceptar</button>
+      <button type="button" class="btn btn-ghost" data-consent="configure" aria-expanded="false" aria-controls="consent-panel">Configurar</button>
+      <button type="button" class="btn btn-ghost" data-consent="save" hidden>Guardar selección</button>
+    </div>
+  </div>
+</div>

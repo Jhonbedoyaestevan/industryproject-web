@@ -1,0 +1,38 @@
+---
+layout: layouts/legal.njk
+title: Aviso legal
+permalink: /aviso-legal/
+---
+{% set L = site.legal %}
+<h2>1. Datos identificativos del titular</h2>
+<p>En cumplimiento del deber de información recogido en el artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se facilitan los siguientes datos:</p>
+<table>
+  <tbody>
+    <tr><th scope="row">Titular</th><td>{{ L.titular }}</td></tr>
+    <tr><th scope="row">Forma jurídica</th><td>{{ L.forma_juridica }}</td></tr>
+    <tr><th scope="row">NIF/CIF</th><td>{{ L.nif }}</td></tr>
+    <tr><th scope="row">Domicilio</th><td>{{ L.domicilio }}</td></tr>
+    <tr><th scope="row">Correo electrónico</th><td><a href="mailto:{{ L.email_privacidad }}">{{ L.email_privacidad }}</a></td></tr>
+    {% if L.registro_mercantil %}<tr><th scope="row">Datos registrales</th><td>{{ L.registro_mercantil }}</td></tr>{% endif %}
+    {% if L.colegio_profesional %}<tr><th scope="row">Colegio profesional</th><td>{{ L.colegio_profesional }}</td></tr>{% endif %}
+    {% if L.titulo_profesional %}<tr><th scope="row">Título académico y Estado de expedición u homologación</th><td>{{ L.titulo_profesional }}</td></tr>{% endif %}
+    <tr><th scope="row">Nombre comercial</th><td>{{ site.marca }}</td></tr>
+  </tbody>
+</table>
+<p>Cuando la actividad se ejerza como profesión regulada, se indicarán el colegio profesional, el título académico oficial y el Estado de la Unión Europea o del Espacio Económico Europeo en que se expidió o, en su caso, la homologación o reconocimiento correspondiente (art. 10.1.e LSSI-CE). Las normas profesionales aplicables pueden consultarse en la web del colegio correspondiente.</p>
+
+<h2>2. Objeto</h2>
+<p>Este sitio web tiene por objeto informar sobre los servicios profesionales de ingeniería, peritaje técnico y consultoría económica prestados por el titular y su equipo, y facilitar el contacto con potenciales clientes. El acceso y uso del sitio atribuye la condición de usuario e implica la aceptación de este aviso legal y de los <a href="/terminos/">Términos y condiciones</a>.</p>
+
+<h2>3. Propiedad intelectual e industrial</h2>
+<p>Los contenidos del sitio (textos, artículos técnicos, imágenes, diseño, logotipos y código fuente) son titularidad del titular o de terceros que han autorizado su uso, y están protegidos por el Real Decreto Legislativo 1/1996, de 12 de abril, por el que se aprueba el texto refundido de la Ley de Propiedad Intelectual, y por la Ley 17/2001, de 7 de diciembre, de Marcas. Se permite la cita con indicación de la fuente y enlace al original. Queda prohibida su reproducción, distribución o transformación con fines comerciales sin autorización expresa y por escrito.</p>
+
+<h2>4. Responsabilidad</h2>
+<p>Los contenidos tienen carácter informativo y general. No constituyen asesoramiento profesional ni sustituyen al estudio técnico del caso concreto, que solo se presta mediante el correspondiente encargo profesional. El titular no garantiza la ausencia de interrupciones o errores técnicos y adopta medidas razonables para mantener el sitio seguro y actualizado, conforme a los artículos 13 a 17 de la LSSI-CE.</p>
+<p>Los enlaces a sitios de terceros se ofrecen solo como referencia. El titular no controla ni responde de sus contenidos ni de sus políticas de privacidad (art. 17 LSSI-CE).</p>
+
+<h2>5. Protección de datos y cookies</h2>
+<p>El tratamiento de datos personales se rige por la <a href="/privacidad/">Política de privacidad</a>. El uso de cookies y tecnologías similares se describe en la <a href="/cookies/">Política de cookies</a>.</p>
+
+<h2>6. Legislación aplicable y jurisdicción</h2>
+<p>Este aviso legal se rige por la legislación española. Para la resolución de controversias, las partes se someten a los juzgados y tribunales que resulten competentes conforme a la ley. Cuando el usuario tenga la condición de consumidor, será competente el juzgado de su domicilio, de acuerdo con el artículo 90.2 del Real Decreto Legislativo 1/2007, de 16 de noviembre (TRLGDCU).</p>

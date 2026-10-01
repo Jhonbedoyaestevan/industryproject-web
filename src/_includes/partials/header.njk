@@ -1,0 +1,26 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="{{ site.marca }} — inicio">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="32" height="32"><rect width="32" height="32" rx="6" fill="currentColor"/><path d="M10 9v14M15 23V9h4.5a4 4 0 0 1 0 8H15" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="brand-text">
+        <strong>{{ site.marca }}</strong>
+        <small>{{ site.lema }}</small>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+      <span class="sr-only">Abrir menú</span>
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+    </button>
+    <nav id="menu-principal" class="main-nav" aria-label="Principal">
+      <ul>
+        <li><a href="/#servicios">Servicios</a></li>
+        <li><a href="/proyectos/"{% if "/proyectos/" in page.url %} aria-current="page"{% endif %}>Proyectos</a></li>
+        <li><a href="/noticias/"{% if "/noticias/" in page.url %} aria-current="page"{% endif %}>Noticias</a></li>
+        <li><a href="/#perfil">Perfil</a></li>
+        <li><a class="btn btn-primary btn-sm" href="/#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,28 @@
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Migas de pan"><a href="/">Inicio</a> <span aria-hidden="true">/</span> {{ seccionTitulo }}</nav>
+    <h1>{{ seccionTitulo }}</h1>
+    <p>{{ seccionIntro }}</p>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    {% if items.length %}
+    <div class="cards-grid">
+      {% for item in items %}{% include "partials/card.njk" %}{% endfor %}
+    </div>
+    {% else %}
+    <p>Todavía no hay publicaciones en esta sección.</p>
+    {% endif %}
+
+    {% if pagination.pages.length > 1 %}
+    <nav class="pagination" aria-label="Paginación">
+      {% if pagination.href.previous %}<a href="{{ pagination.href.previous }}" rel="prev">« Anterior</a>{% endif %}
+      {% for href in pagination.hrefs %}
+        <a href="{{ href }}"{% if page.url == href %} aria-current="page"{% endif %}><span class="sr-only">Página </span>{{ loop.index }}</a>
+      {% endfor %}
+      {% if pagination.href.next %}<a href="{{ pagination.href.next }}" rel="next">Siguiente »</a>{% endif %}
+    </nav>
+    {% endif %}
+  </div>
+</section>

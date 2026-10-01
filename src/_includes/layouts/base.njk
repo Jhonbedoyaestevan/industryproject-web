@@ -1,0 +1,42 @@
+{%- set workerOrigin = env.workerUrl | origin -%}
+{%- set pageTitle = (title + " | " + site.marca) if title else (site.marca + " — " + site.lema) -%}
+{%- set pageDesc = (resumen or description or site.descripcion) -%}
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {#
+    CSP vía <meta>: GitHub Pages no permite cabeceras HTTP personalizadas.
+    - Sin 'unsafe-inline' ni 'unsafe-eval' en el sitio público.
+    - frame-ancestors / report-uri NO son válidos en <meta> (ver Dossier §2.6).
+  #}
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://challenges.cloudflare.com https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://cloudflareinsights.com{% if workerOrigin %} {{ workerOrigin }}{% endif %}; frame-src https://challenges.cloudflare.com; form-action 'self'{% if workerOrigin %} {{ workerOrigin }}{% endif %}; object-src 'none'; base-uri 'self'; manifest-src 'self'; worker-src 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="color-scheme" content="light">
+  <title>{{ pageTitle }}</title>
+  <meta name="description" content="{{ pageDesc }}">
+  <link rel="canonical" href="{{ env.siteUrl }}{{ page.url }}">
+  {% if noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
+  <meta property="og:type" content="{{ 'article' if layout == 'layouts/post.njk' else 'website' }}">
+  <meta property="og:title" content="{{ pageTitle }}">
+  <meta property="og:description" content="{{ pageDesc }}">
+  <meta property="og:url" content="{{ env.siteUrl }}{{ page.url }}">
+  <meta property="og:locale" content="es_ES">
+  {% if imagen %}<meta property="og:image" content="{{ env.siteUrl }}{{ imagen }}">{% endif %}
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/consent.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body{% if env.cfAnalyticsToken %} data-cf-analytics="{{ env.cfAnalyticsToken }}"{% endif %} data-policy-version="{{ site.legal.version_politicas }}">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  {% include "partials/header.njk" %}
+  <main id="contenido">
+    {{ content | safe }}
+  </main>
+  {% include "partials/footer.njk" %}
+  {% include "partials/cookie-banner.njk" %}
+</body>
+</html>

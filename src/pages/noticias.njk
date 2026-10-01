@@ -1,0 +1,12 @@
+---
+layout: layouts/base.njk
+title: Noticias
+pagination:
+  data: collections.noticias
+  size: 9
+  alias: items
+permalink: "/noticias/{% if pagination.pageNumber > 0 %}pagina/{{ pagination.pageNumber + 1 }}/{% endif %}"
+---
+{% set seccion = "noticias" %}{% set seccionTitulo = "Noticias" %}
+{% set seccionIntro = "Artículos técnicos sobre normativa, ingeniería, seguridad industrial y economía de proyectos." %}
+{% include "partials/listing.njk" %}

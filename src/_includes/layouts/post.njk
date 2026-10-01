@@ -1,0 +1,33 @@
+---
+layout: layouts/base.njk
+---
+<article class="post">
+  <header class="post-hero">
+    <div class="container container-narrow">
+      <nav class="breadcrumb" aria-label="Migas de pan">
+        <a href="/">Inicio</a> <span aria-hidden="true">/</span>
+        <a href="/{{ seccion }}/">{{ seccion | capitalize }}</a>
+      </nav>
+      {% set etiqueta = categoria or sector %}
+      {% if etiqueta %}<span class="chip">{{ etiqueta }}</span>{% endif %}
+      <h1>{{ title }}</h1>
+      <p class="post-meta">
+        <time datetime="{{ page.date | isoDate }}">{{ page.date | fechaES }}</time>
+        {% if cliente %} · Cliente: {{ cliente }}{% endif %}
+        {% if ubicacion %} · {{ ubicacion }}{% endif %}
+      </p>
+    </div>
+  </header>
+  {% if imagen %}
+  <figure class="post-cover container container-narrow">
+    <img src="{{ imagen }}" alt="{{ imagen_alt or '' }}" width="1200" height="675" decoding="async">
+  </figure>
+  {% endif %}
+  <div class="container container-narrow prose">
+    {{ content | safe }}
+  </div>
+  <div class="container container-narrow post-footer">
+    <a class="btn btn-outline" href="/{{ seccion }}/">← Volver a {{ seccion }}</a>
+    <a class="btn btn-primary" href="/#contacto">Consultar un caso similar</a>
+  </div>
+</article>

@@ -1,0 +1,127 @@
+---
+layout: layouts/legal.njk
+title: Política de privacidad
+permalink: /privacidad/
+---
+{% set L = site.legal %}
+<p>Esta política explica cómo tratamos sus datos personales cuando visita este sitio o nos contacta. Se ha redactado conforme al Reglamento (UE) 2016/679 (RGPD), a la Ley Orgánica 3/2018 (LOPDGDD) y, en los anexos, a la normativa de Estados Unidos (Florida), Colombia y Chile aplicable a usuarios de esas jurisdicciones.</p>
+
+<h2>1. Responsable del tratamiento</h2>
+<table>
+  <tbody>
+    <tr><th scope="row">Responsable</th><td>{{ L.titular }} ({{ site.marca }})</td></tr>
+    <tr><th scope="row">NIF/CIF</th><td>{{ L.nif }}</td></tr>
+    <tr><th scope="row">Domicilio</th><td>{{ L.domicilio }}</td></tr>
+    <tr><th scope="row">Contacto de privacidad</th><td><a href="mailto:{{ L.email_privacidad }}">{{ L.email_privacidad }}</a></td></tr>
+    {% if L.dpd %}<tr><th scope="row">Delegado de Protección de Datos</th><td>{{ L.dpd }}</td></tr>{% endif %}
+  </tbody>
+</table>
+
+<h2>2. Qué datos tratamos, para qué y con qué base jurídica</h2>
+<table>
+  <thead><tr><th>Actividad</th><th>Datos</th><th>Finalidad</th><th>Base jurídica (RGPD)</th><th>Conservación</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>Formulario de contacto y gestión del contacto</td>
+      <td>Nombre, empresa (opcional), correo, teléfono (opcional), servicio de interés, mensaje, versión de la política aceptada y fecha</td>
+      <td>Responder a su consulta, registrar el contacto en nuestro sistema de gestión de contactos (lista «Web · Contactos» en Brevo) y, en su caso, preparar una propuesta. El texto del mensaje no se almacena en ese sistema.</td>
+      <td>Consentimiento (art. 6.1.a) y medidas precontractuales a petición del interesado (art. 6.1.b)</td>
+      <td>12 meses desde el último contacto, con <strong>borrado automático</strong>. Si se formaliza un encargo, durante la relación y los plazos legales posteriores (6 años, art. 30 Código de Comercio; 4 años, art. 66 Ley General Tributaria)</td>
+    </tr>
+    <tr>
+      <td>Acuse de recibo</td>
+      <td>Correo electrónico y nombre de pila</td>
+      <td>Confirmarle por correo que hemos recibido su consulta</td>
+      <td>Medidas precontractuales a petición del interesado (art. 6.1.b)</td>
+      <td>Registro técnico del envío según la política de Brevo</td>
+    </tr>
+    <tr>
+      <td>Comunicaciones profesionales (opcional)</td>
+      <td>Nombre, correo, fecha y prueba de la confirmación</td>
+      <td>Enviar novedades técnicas y normativas por correo, solo tras confirmar la suscripción mediante el enlace que le enviamos (doble opt-in)</td>
+      <td>Consentimiento expreso (art. 6.1.a RGPD; art. 21 LSSI-CE)</td>
+      <td>Hasta que solicite la baja. Tras la baja, conservamos su dirección en una lista de exclusión solo para no volver a enviarle comunicaciones</td>
+    </tr>
+    <tr>
+      <td>Protección anti-spam (Cloudflare Turnstile)</td>
+      <td>Datos técnicos del navegador y dirección IP, tratados por Cloudflare</td>
+      <td>Distinguir personas de bots y proteger el formulario</td>
+      <td>Interés legítimo en la seguridad de la red y de la información (art. 6.1.f y considerando 49)</td>
+      <td>Según la política de Cloudflare; el responsable no conserva estos datos</td>
+    </tr>
+    <tr>
+      <td>Analítica de audiencia (solo si la acepta)</td>
+      <td>Página visitada, referente, país, tipo de dispositivo, de forma agregada y sin cookies</td>
+      <td>Conocer el número de visitas y mejorar el sitio</td>
+      <td>Consentimiento (art. 6.1.a RGPD; art. 22.2 LSSI-CE)</td>
+      <td>Datos agregados; Cloudflare no crea perfiles</td>
+    </tr>
+    <tr>
+      <td>Alojamiento web (GitHub Pages)</td>
+      <td>Dirección IP y registros técnicos de acceso, tratados por GitHub</td>
+      <td>Servir el sitio y garantizar su seguridad</td>
+      <td>Interés legítimo (art. 6.1.f)</td>
+      <td>Según la política de GitHub</td>
+    </tr>
+  </tbody>
+</table>
+<p>Los campos marcados con asterisco son obligatorios: sin ellos no podemos atender la consulta. No solicitamos categorías especiales de datos (art. 9 RGPD); le rogamos que no las incluya en el mensaje. No se adoptan decisiones automatizadas ni se elaboran perfiles con efectos jurídicos (art. 22 RGPD).</p>
+
+<h2>3. Destinatarios y encargados del tratamiento</h2>
+<p>No cedemos datos a terceros, salvo obligación legal. Los siguientes proveedores tratan datos por cuenta del responsable, con contrato de encargo conforme al art. 28 RGPD:</p>
+<ul>
+  <li><strong>Cloudflare, Inc.</strong> (EE. UU.): verificación anti-spam, procesamiento del formulario y analítica sin cookies.</li>
+  <li><strong>Brevo (Sendinblue SAS)</strong> (Francia, UE): gestión de la lista de contactos, envío del acuse de recibo, de las notificaciones internas y, si se suscribe, de las comunicaciones profesionales.</li>
+  <li><strong>GitHub, Inc.</strong> (EE. UU.): alojamiento del sitio web.</li>
+  <li>Proveedor del buzón de correo electrónico del responsable.</li>
+</ul>
+
+<h2>4. Transferencias internacionales</h2>
+<p>Algunos proveedores están establecidos en Estados Unidos. Las transferencias se amparan en la Decisión de Ejecución (UE) 2023/1795 de la Comisión, de 10 de julio de 2023, relativa al Marco de Privacidad de Datos UE-EE. UU. (art. 45 RGPD), para las entidades certificadas, y en las cláusulas contractuales tipo aprobadas por la Decisión de Ejecución (UE) 2021/914 (art. 46.2.c RGPD). Puede solicitar copia de las garantías escribiendo al contacto de privacidad.</p>
+
+<h2>5. Sus derechos</h2>
+<p>Puede ejercer los derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad (arts. 15 a 22 RGPD y arts. 12 a 18 LOPDGDD) escribiendo a <a href="mailto:{{ L.email_privacidad }}">{{ L.email_privacidad }}</a>, indicando el derecho que ejerce. Respondemos en el plazo de un mes, prorrogable dos meses más en casos complejos (art. 12.3 RGPD). Podemos pedirle información adicional para confirmar su identidad.</p>
+<p>Puede retirar su consentimiento en cualquier momento, sin que ello afecte a la licitud del tratamiento previo (art. 7.3 RGPD). Para las comunicaciones, use el enlace de baja incluido en cada correo. Para la analítica, use «Configurar cookies» en el pie de página.</p>
+<p>Si considera que no hemos atendido correctamente sus derechos, puede presentar una reclamación ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es" rel="noopener" target="_blank">www.aepd.es</a>), conforme al art. 77 RGPD.</p>
+
+<h2>6. Seguridad</h2>
+<p>Aplicamos medidas técnicas y organizativas apropiadas al riesgo (art. 32 RGPD), entre ellas:</p>
+<ul>
+  <li>Cifrado HTTPS en todas las comunicaciones.</li>
+  <li>Política de seguridad de contenidos (CSP).</li>
+  <li>Verificación anti-bots en servidor.</li>
+  <li>Ausencia de bases de datos públicas.</li>
+  <li>Credenciales custodiadas como secretos cifrados.</li>
+  <li>Autenticación de doble factor en las cuentas de administración.</li>
+</ul>
+
+<h2>7. Menores de edad</h2>
+<p>Este sitio se dirige a profesionales y empresas. No recogemos conscientemente datos de menores de 14 años (art. 7 LOPDGDD) ni de menores de 13 años (COPPA, 15 U.S.C. §6501 y ss.; 16 CFR Parte 312). Si detectamos este tipo de datos, los suprimiremos.</p>
+
+<h2>Anexo I · Usuarios en Estados Unidos (Florida)</h2>
+<ul>
+  <li><strong>Categorías recogidas:</strong> identificadores (nombre, correo, teléfono), información profesional (empresa) y datos de uso agregados. No recogemos datos sensibles (sensitive data, Fla. Stat. §501.702), ni datos biométricos ni de geolocalización precisa.</li>
+  <li><strong>No vendemos datos personales</strong> ni los usamos para publicidad dirigida (targeted advertising) o elaboración de perfiles.</li>
+  <li><strong>Global Privacy Control:</strong> respetamos la señal GPC de su navegador como rechazo automático de la analítica opcional.</li>
+  <li><strong>Sus solicitudes:</strong> puede pedir acceso, corrección o eliminación de sus datos escribiendo al contacto de privacidad. Responderemos en un plazo máximo de 45 días.</li>
+  <li><strong>Brechas de seguridad:</strong> si afectan a residentes en Florida, notificaremos conforme a la Florida Information Protection Act (Fla. Stat. §501.171), en un plazo no superior a 30 días.</li>
+  <li><strong>Correo comercial:</strong> solo con su autorización expresa, identificando al remitente, con dirección postal y con un mecanismo de baja operativo, conforme a la CAN-SPAM Act (15 U.S.C. §7704).</li>
+</ul>
+
+<h2>Anexo II · Titulares en Colombia (Ley 1581 de 2012)</h2>
+<ul>
+  <li><strong>Autorización:</strong> al marcar la casilla de privacidad, usted otorga autorización previa, expresa e informada para las finalidades descritas en la sección 2 (arts. 9 y 12 Ley 1581 de 2012; Decreto 1074 de 2015, que compila el Decreto 1377 de 2013).</li>
+  <li><strong>Derechos (art. 8):</strong> conocer, actualizar y rectificar sus datos; solicitar prueba de la autorización; ser informado del uso dado a sus datos; revocar la autorización o solicitar la supresión; acceder gratuitamente a sus datos; presentar quejas ante la Superintendencia de Industria y Comercio (SIC).</li>
+  <li><strong>Plazos:</strong> las consultas se atienden en un máximo de 10 días hábiles (art. 14) y los reclamos en un máximo de 15 días hábiles (art. 15).</li>
+  <li><strong>Transferencias internacionales:</strong> se realizan a proveedores con niveles adecuados de protección o con garantías contractuales (art. 26).</li>
+</ul>
+
+<h2>Anexo III · Titulares en Chile (Ley 19.628 y Ley 21.719)</h2>
+<ul>
+  <li>Tratamos sus datos con su consentimiento y para las finalidades informadas.</li>
+  <li>Puede ejercer los derechos de acceso, rectificación, supresión y oposición, y, desde la entrada en vigor de la Ley 21.719 (prevista para el 1 de diciembre de 2026), también los de portabilidad y bloqueo, escribiendo al contacto de privacidad.</li>
+  <li>Una vez vigente la reforma, podrá reclamar ante la Agencia de Protección de Datos Personales.</li>
+</ul>
+
+<h2>8. Cambios en esta política</h2>
+<p>Publicaremos cualquier modificación en esta página, con su número de versión y fecha. Si los cambios son sustanciales, volveremos a solicitar su consentimiento cuando sea necesario.</p>

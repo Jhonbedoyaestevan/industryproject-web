@@ -1,0 +1,42 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <section>
+      <h2 class="footer-title">{{ site.marca }}</h2>
+      <p>{{ site.descripcion }}</p>
+      {% set socialClass = "social-footer" %}{% include "partials/social.njk" %}
+    </section>
+    <section>
+      <h2 class="footer-title">Servicios</h2>
+      <ul class="footer-links">
+        {% for s in site.servicios | limit(6) %}<li><a href="/#servicios">{{ s.titulo }}</a></li>{% endfor %}
+      </ul>
+    </section>
+    <section>
+      <h2 class="footer-title">Información</h2>
+      <ul class="footer-links">
+        <li><a href="/#perfil">Perfil profesional</a></li>
+        <li><a href="/proyectos/">Proyectos</a></li>
+        <li><a href="/noticias/">Noticias</a></li>
+        <li><a href="/#contacto">Contacto</a></li>
+      </ul>
+    </section>
+    <section>
+      <h2 class="footer-title">Legal</h2>
+      <ul class="footer-links">
+        <li><a href="/aviso-legal/">Aviso legal</a></li>
+        <li><a href="/privacidad/">Política de privacidad</a></li>
+        <li><a href="/cookies/">Política de cookies</a></li>
+        <li><a href="/terminos/">Términos y condiciones</a></li>
+        <li><button type="button" class="link-button" data-consent-open>Configurar cookies</button></li>
+      </ul>
+    </section>
+  </div>
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>© {{ env.buildDate | year }} {{ site.legal.titular }} · {{ site.marca }}</p>
+      <p class="footer-legal-inline">
+        <a href="/aviso-legal/">Aviso legal</a> · <a href="/privacidad/">Privacidad</a> · <a href="/cookies/">Cookies</a> · <a href="/terminos/">Términos</a>
+      </p>
+    </div>
+  </div>
+</footer>

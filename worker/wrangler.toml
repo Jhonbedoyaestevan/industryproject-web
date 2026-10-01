@@ -1,0 +1,59 @@
+# =============================================================================
+# Cloudflare Worker — industryproject-edge (plan Free)
+# Publicado en dominio propio: https://api.industryproject.net
+#
+# SECRETOS CIFRADOS (nunca en este archivo ni en el repositorio):
+#   npx wrangler secret put GITHUB_CLIENT_ID
+#   npx wrangler secret put GITHUB_CLIENT_SECRET
+#   npx wrangler secret put TURNSTILE_SECRET
+#   npx wrangler secret put BREVO_API_KEY
+# Despliegue:  cd worker && npx wrangler deploy
+# =============================================================================
+name = "industryproject-edge"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+workers_dev = false
+
+# Dominio personalizado (crea el registro DNS y el certificado automáticamente;
+# requiere que la zona industryproject.net esté en Cloudflare)
+routes = [
+  { pattern = "api.industryproject.net", custom_domain = true }
+]
+
+[observability]
+enabled = true
+head_sampling_rate = 1
+
+# Purga diaria de contactos caducados en Brevo (art. 5.1.e RGPD) — 03:17 UTC
+[triggers]
+crons = ["17 3 * * *"]
+
+[vars]
+# Orígenes permitidos (coma-separados). El PRIMERO es el principal (OAuth de Decap).
+ALLOWED_ORIGINS   = "https://industryproject.net,https://www.industryproject.net"
+# Hostnames aceptados en la verificación de Turnstile (coma-separados)
+ALLOWED_HOSTNAMES = "industryproject.net,www.industryproject.net"
+GITHUB_SCOPE      = "public_repo"
+
+# --- Correo (remitentes del dominio verificado en Brevo) ----------------------
+MAIL_TO          = "contacto@industryproject.net"
+MAIL_FROM        = "no-responder@industryproject.net"
+MAIL_FROM_NAME   = "Industry Project"
+MAIL_REPLY_TO    = "contacto@industryproject.net"
+
+# --- Brevo: IDs que imprime `node scripts/brevo-setup.mjs` ---------------------
+BREVO_LIST_LEADS            = "0"   # Lista «Web · Contactos»
+BREVO_LIST_NEWSLETTER       = "0"   # Lista «Web · Newsletter (doble opt-in)»
+BREVO_DOI_TEMPLATE_ID       = "0"   # Plantilla de doble opt-in (etiqueta «optin»)
+BREVO_TEMPLATE_CONFIRMACION = "0"   # Opcional: plantilla propia de acuse; 0 = plantilla integrada
+DOI_REDIRECT_URL            = "https://industryproject.net/suscripcion-confirmada/"
+
+# --- Retención (art. 5.1.e RGPD) ----------------------------------------------
+RETENTION_DAYS    = "365"
+RETENTION_DRY_RUN = "true"   # Cambie a "false" tras revisar los registros de la primera ejecución
+
+# --- Limitación de frecuencia (recomendada) -----------------------------------
+# [[ratelimits]]
+# name = "CONTACT_LIMITER"
+# namespace_id = "1001"
+# simple = { limit = 5, period = 60 }

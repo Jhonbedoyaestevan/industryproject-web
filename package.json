@@ -1,0 +1,24 @@
+{
+  "name": "industryproject-web",
+  "version": "1.0.0",
+  "description": "Web de Industry Project (Eleventy + Decap CMS + Cloudflare Worker + Brevo)",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve",
+    "cms": "npx decap-server",
+    "check:secrets": "node scripts/check-secrets.mjs",
+    "test": "node --test worker/test/worker.test.js"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "decap-cms": "^3.16.3",
+    "markdown-it": "^15.0.2"
+  },
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  }
+}
