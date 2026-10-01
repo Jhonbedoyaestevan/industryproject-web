@@ -36,10 +36,10 @@ ALLOWED_HOSTNAMES = "industryproject.net,www.industryproject.net"
 GITHUB_SCOPE      = "public_repo"
 
 # --- Correo (remitentes del dominio verificado en Brevo) ----------------------
-MAIL_TO          = "contacto@industryproject.net"
+MAIL_TO          = "jhon@industryproject.net"
 MAIL_FROM        = "no-responder@industryproject.net"
 MAIL_FROM_NAME   = "Industry Project"
-MAIL_REPLY_TO    = "contacto@industryproject.net"
+MAIL_REPLY_TO    = "jhono@industryproject.net"
 
 # --- Brevo: IDs que imprime `node scripts/brevo-setup.mjs` ---------------------
 BREVO_LIST_LEADS            = "0"   # Lista «Web · Contactos»
