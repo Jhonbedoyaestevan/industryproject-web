@@ -1,0 +1,98 @@
+# =============================================================================
+# Compila con Eleventy y publica en GitHub Pages en cada push a main
+# (incluidos los commits que hace Decap CMS al publicar una noticia).
+# Configure en Settings → Pages → Source: "GitHub Actions".
+# Variables PÚBLICAS en Settings → Secrets and variables → Actions → Variables.
+# =============================================================================
+name: Desplegar sitio
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Mínimo privilegio (OWASP A01 / supply chain)
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Instalar dependencias (lockfile exacto)
+        run: npm ci --no-audit --no-fund
+      - name: Escanear secretos en el código
+        run: npm run check:secrets
+      - name: Pruebas del Worker
+        run: npm test
+      - name: Compilar
+        run: npm run build
+        env:
+          ELEVENTY_ENV: production
+          SITE_URL: ${{ vars.SITE_URL }}
+          PATH_PREFIX: ${{ vars.PATH_PREFIX }}
+          WORKER_URL: ${{ vars.WORKER_URL }}
+          TURNSTILE_SITEKEY: ${{ vars.TURNSTILE_SITEKEY }}
+          CF_ANALYTICS_TOKEN: ${{ vars.CF_ANALYTICS_TOKEN }}
+          CMS_BRANCH: main
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+# =============================================================================
+# Despliega el Cloudflare Worker cuando cambia la carpeta worker/ (opcional).
+# Requiere en GitHub → Settings → Secrets and variables → Actions → *Secrets*:
+#   CLOUDFLARE_API_TOKEN   (plantilla «Edit Cloudflare Workers», limitada a su cuenta)
+#   CLOUDFLARE_ACCOUNT_ID
+# Los secretos del Worker (Brevo, Turnstile, GitHub OAuth) NO pasan por aquí:
+# permanecen cifrados en Cloudflare y `wrangler deploy` no los modifica.
+# =============================================================================
+name: Desplegar Worker
+
+on:
+  push:
+    branches: [main]
+    paths: ["worker/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Pruebas del Worker
+        run: node --test worker/test/worker.test.js
+      - name: Desplegar
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: worker
+          command: deploy
