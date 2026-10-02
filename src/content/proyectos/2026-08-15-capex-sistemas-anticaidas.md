@@ -1,15 +1,15 @@
 ---
-title: "Estudio CAPEX de sistemas anticaídas en edificio histórico"
+title: Estudio CAPEX de sistemas anticaídas en edificio histórico
 date: 2026-08-15
 draft: false
-sector: "Patrimonio y hostelería"
+sector: Patrimonio y hostelería
 cliente: ""
-ubicacion: "España"
-resumen: "Ingeniería y presupuesto de líneas de vida y puntos de anclaje compatibles con la protección patrimonial del inmueble."
-imagen: "/assets/img/Logo Proyecto si fondo.JPG"
-imagen_alt: "Imagen de proyecto"
+ubicacion: España
+resumen: Ingeniería y presupuesto de líneas de vida y puntos de anclaje
+  compatibles con la protección patrimonial del inmueble.
+imagen: /assets/img/Logo Proyecto si fondo.JPG
+imagen_alt: Imagen de proyecto
 ---
-
 ## Reto
 
 Garantizar el acceso seguro a cubiertas para mantenimiento sin alterar elementos protegidos.
@@ -22,4 +22,4 @@ Diseño de sistema mixto (línea horizontal + anclajes puntuales), cálculo de f
 
 Propuesta técnico-económica aprobada para su ejecución.
 
-*Proyecto de ejemplo: no publicamos el nombre de clientes sin su autorización expresa por escrito.*
+*No publicamos el nombre de clientes sin su autorización expresa por escrito.*
