@@ -27,36 +27,50 @@
   var scriptRequested = false;
 
   function setStatus(msg, kind) {
+    if (!statusEl) return;
     statusEl.textContent = msg;
     statusEl.className = "form-status" + (kind ? " is-" + kind : "");
   }
 
   if (!endpoint || !sitekey) {
-    submitBtn.disabled = true;
+    if (submitBtn) submitBtn.disabled = true;
     setStatus("Formulario temporalmente no disponible. Escríbanos por correo o WhatsApp.", "error");
     return;
   }
 
   // ---- Turnstile: carga diferida y renderizado explícito ---------------------
   window.__onTurnstileLoad = function () {
-    if (!window.turnstile || widgetId !== null) return;
-    widgetId = window.turnstile.render(container, {
-      sitekey: sitekey,
-      action: "contact",
-      appearance: "interaction-only",   // invisible salvo que Cloudflare requiera interacción
-      language: "es",
-      callback: function (t) { token = t; },
-      "expired-callback": function () { token = ""; },
-      "error-callback": function () {
-        token = "";
-        setStatus("No se pudo completar la verificación anti-spam. Recargue la página.", "error");
-      }
-    });
+    if (!window.turnstile) return;
+
+    var targetContainer = container || document.getElementById("turnstile-container");
+    var targetSitekey = sitekey || (form ? form.getAttribute("data-sitekey") : "");
+
+    if (widgetId === null && targetContainer && targetSitekey) {
+      widgetId = window.turnstile.render(targetContainer, {
+        sitekey: targetSitekey,
+        action: "contact",
+        appearance: "interaction-only",   // invisible salvo que Cloudflare requiera interacción
+        language: "es",
+        callback: function (t) { token = t; },
+        "expired-callback": function () { token = ""; },
+        "error-callback": function () {
+          token = "";
+          setStatus("No se pudo completar la verificación anti-spam. Recargue la página.", "error");
+        }
+      });
+    }
   };
 
   function requestTurnstile() {
     if (scriptRequested) return;
     scriptRequested = true;
+
+    // Si la API de Turnstile ya fue cargada previamente por el navegador
+    if (window.turnstile) {
+      window.__onTurnstileLoad();
+      return;
+    }
+
     var s = document.createElement("script");
     s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=__onTurnstileLoad";
     s.async = true;
@@ -66,7 +80,10 @@
 
   if ("IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (entries) {
-      if (entries.some(function (e) { return e.isIntersecting; })) { requestTurnstile(); io.disconnect(); }
+      if (entries.some(function (e) { return e.isIntersecting; })) { 
+        requestTurnstile(); 
+        io.disconnect(); 
+      }
     }, { rootMargin: "300px" });
     io.observe(form);
   } else {
@@ -91,7 +108,11 @@
     setStatus("");
 
     // Honeypot relleno → descartar silenciosamente
-    if (form.web.value) { form.reset(); setStatus("Mensaje enviado. Gracias.", "ok"); return; }
+    if (form.web && form.web.value) { 
+      form.reset(); 
+      setStatus("Mensaje enviado. Gracias.", "ok"); 
+      return; 
+    }
 
     if (!form.checkValidity()) {
       form.reportValidity();
@@ -99,7 +120,7 @@
       return;
     }
 
-    submitBtn.disabled = true;
+    if (submitBtn) submitBtn.disabled = true;
     setStatus("Verificando y enviando…");
     requestTurnstile();
 
@@ -108,16 +129,16 @@
         throw new Error("captcha");
       }
       var payload = {
-        nombre: form.nombre.value.trim(),
-        empresa: form.empresa.value.trim(),
-        email: form.email.value.trim(),
-        telefono: form.telefono.value.trim(),
-        servicio: form.servicio.value,
-        mensaje: form.mensaje.value.trim(),
-        privacidad: form.privacidad.checked === true,
-        comercial: form.comercial.checked === true,
+        nombre: form.nombre ? form.nombre.value.trim() : "",
+        empresa: form.empresa ? form.empresa.value.trim() : "",
+        email: form.email ? form.email.value.trim() : "",
+        telefono: form.telefono ? form.telefono.value.trim() : "",
+        servicio: form.servicio ? form.servicio.value : "",
+        mensaje: form.mensaje ? form.mensaje.value.trim() : "",
+        privacidad: form.privacidad ? form.privacidad.checked === true : false,
+        comercial: form.comercial ? form.comercial.checked === true : false,
         policyVersion: policyVersion,
-        web: form.web.value,
+        web: form.web ? form.web.value : "",
         token: t
       };
       var ctrl = new AbortController();
@@ -145,7 +166,7 @@
       if (err && err.message === "rate_limited") msg = "Demasiados envíos seguidos. Inténtelo en unos minutos.";
       setStatus(msg, "error");
     }).finally(function () {
-      submitBtn.disabled = false;
+      if (submitBtn) submitBtn.disabled = false;
       token = "";
       if (window.turnstile && widgetId !== null) window.turnstile.reset(widgetId);
     });
