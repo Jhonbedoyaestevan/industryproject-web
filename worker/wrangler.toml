@@ -39,7 +39,7 @@ GITHUB_SCOPE      = "public_repo"
 MAIL_TO          = "jhon@industryproject.net"
 MAIL_FROM        = "no-responder@industryproject.net"
 MAIL_FROM_NAME   = "Industry Project"
-MAIL_REPLY_TO    = "jhono@industryproject.net"
+MAIL_REPLY_TO    = "jhon@industryproject.net"
 
 # --- Brevo: IDs que imprime `node scripts/brevo-setup.mjs` ---------------------
 BREVO_LIST_LEADS            = "0"   # Lista «Web · Contactos»
