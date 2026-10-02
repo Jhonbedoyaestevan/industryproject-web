@@ -95,66 +95,7 @@ permalink: /
       {% set socialClass = "social-contact" %}{% include "partials/social.njk" %}
     </div>
     <div class="contact-card">
-      <form id="contact-form" data-endpoint="{{ site.endpoint }}" data-sitekey="{{ site.sitekey }}" data-policy-version="1.0" class="form-grid">
-        <div class="form-group">
-          <label for="nombre">Nombre y apellidos *</label>
-          <input type="text" id="nombre" name="nombre" required placeholder="Ej. Ana Gómez">
-        </div>
-
-        <div class="form-group">
-          <label for="empresa">Empresa u organización</label>
-          <input type="text" id="empresa" name="empresa" placeholder="Ej. Nombre Empresa S.L.">
-        </div>
-
-        <div class="form-group">
-          <label for="email">Correo electrónico *</label>
-          <input type="email" id="email" name="email" required placeholder="ejemplo@dominio.com">
-        </div>
-
-        <div class="form-group">
-          <label for="telefono">Teléfono</label>
-          <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000">
-        </div>
-
-        <div class="form-group form-group-full">
-          <label for="servicio">Servicio de interés</label>
-          <select id="servicio" name="servicio">
-            <option value="">Seleccione una opción…</option>
-            {% for s in site.servicios %}
-            <option value="{{ s.titulo }}">{{ s.titulo }}</option>
-            {% endfor %}
-            <option value="Otro">Otro asunto</option>
-          </select>
-        </div>
-
-        <div class="form-group form-group-full">
-          <label for="mensaje">Consulta o detalle del proyecto *</label>
-          <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Describa brevemente su necesidad…"></textarea>
-        </div>
-
-        <div class="form-group form-group-full form-checkbox">
-          <input type="checkbox" id="privacidad" name="privacidad" required>
-          <label for="privacidad">Acepto la <a href="/legal/privacidad/" target="_blank">política de privacidad</a> *</label>
-        </div>
-
-        <div class="form-group form-group-full form-checkbox">
-          <input type="checkbox" id="comercial" name="comercial">
-          <label for="comercial">Acepto recibir comunicaciones profesionales periódicas.</label>
-        </div>
-
-        <!-- Campo honeypot anti-bots oculto -->
-        <input type="text" name="web" style="display:none !important;" tabindex="-1" autocomplete="off">
-
-        <!-- CONTENEDOR OBLIGATORIO DE CLOUDFLARE TURNSTILE -->
-        <div class="form-group form-group-full">
-          <div id="turnstile-container"></div>
-        </div>
-
-        <div class="form-group form-group-full">
-          <button type="submit" id="cf-submit" class="btn btn-primary btn-block">Enviar consulta</button>
-          <p id="cf-status" class="form-status" aria-live="polite"></p>
-        </div>
-      </form>
+      {% include "partials/contact-form.njk" %}
     </div>
   </div>
 </section>
