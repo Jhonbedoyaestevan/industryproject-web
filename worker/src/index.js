@@ -298,3 +298,14 @@ async function handleContact(request, env, ctx) {
 async function verifyTurnstile(env, token, ip) {
   if (!env.TURNSTILE_SECRET) return { ok: false };
   const form = new FormData();
+  form.append("secret", env.TURNSTILE_SECRET);
+  form.append("response", token);
+  if (ip) form.append("remoteip", ip);
+  form.append("idempotency_key", crypto.randomUUID());
+  const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", { method: "POST", body: form });
+  const out = await res.json().catch(() => ({}));
+  const hosts = allowedHostnames(env);
+  const okHost = hosts.length === 0 || hosts.includes(out.hostname);
+  const okAction = !out.action || out.action === "contact";
+  return { ok: out.success === true && okHost && okAction };
+}
