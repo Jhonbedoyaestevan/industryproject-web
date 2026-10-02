@@ -98,6 +98,7 @@ p { margin: 0 0 1em; }
 .hero h1 { color: #fff; }
 .hero-lead { font-size: 1.15rem; color: #c9d6e3; max-width: 60ch; }
 .eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .8rem; font-weight: 700; color: var(--amber-500); margin-bottom: .8rem; }
+.section:not(.section-dark) .eyebrow, .page-hero .eyebrow { color: #8a5c00; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin: 1.8rem 0; }
 .hero .btn-outline { border-color: #fff; color: #fff; }
 .hero .btn-outline:hover { background: #fff; color: var(--navy-900); }
