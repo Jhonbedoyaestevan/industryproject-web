@@ -4,20 +4,20 @@
   "logo_alt": "Logotipo inicio de Industry Project",
   "lema": "Ingeniería · Peritaje · Consultoría económica",
   "descripcion": "Industry Project: bufete de ingeniería y economistas. Proyectos técnicos, peritajes, seguridad industrial, gestión de proyectos y consultoría económica para empresas en España y Estados Unidos.",
-  "nombre": "Ing. Jhon Estevan Bedoya Bedoya",
+  "nombre": "Jhon Estevan Bedoya B",
   "cargo": "Director técnico · Ingeniero especialista en seguridad industrial y gestión de proyectos",
   "titular": "Decisiones técnicas y económicas respaldadas por normativa, datos y experiencia de campo",
   "subtitulo": "Más de doce años en ingeniería industrial, respuesta a emergencias y dirección de proyectos en Europa y Latinoamérica. Convertimos requisitos normativos complejos en soluciones viables y rentables.",
   "foto": "/assets/img/IMAGEN PW.png",
   "foto_alt": "Retrato profesional de Jhon Estevan Bedoya Bedoya",
   "credenciales": [
-    "IRATA Nivel 3",
-    "ITRA Nivel 3",
+    "IRATA Nivel 3 - ITRA Nivel 3",
     "PMP® · PMI",
     "NFPA 1041",
     "ESPECIALISTA B & I",
     "AUTOMATIZACIÓN Y GESTIÓN B2B",
-    "USAID/OFDA CPI"
+    "INTERNAL AUDITOR ISO 9001, ISO 14001 & ISO 45001",
+    "INGENIERIA APLICADA A LA EXCELENCIA OPERACIONAL",
   ],
   "servicios": [
     {
@@ -41,6 +41,11 @@
       "descripcion": "Evaluación de riesgos, planes de emergencia y autoprotección, auditorías de cumplimiento y formación técnica."
     },
     {
+      "titulo": "Formación y entrenamiento",
+      "icono": "Pizarra estudio",
+      "descripcion": "Formación ITRA, Formación en Trabajos verticales, Espaios confinados, Trabajo en altura, equipos de rescate, prl, plataformas, carretillas."
+    },
+    {
       "titulo": "Gestión de proyectos",
       "icono": "tablero",
       "descripcion": "Dirección y control de proyectos bajo estándares PMI: alcance, plazos, costes, riesgos y cierre documentado."
@@ -56,8 +61,8 @@
     "whatsapp": "+34 643 99 36 60",
     "email": "jhon@industryproject.net",
     "x": "",
-    "instagram": "",
-    "youtube": "",
+    "instagram": "https://www.instagram.com/estevanbyrescate/",
+    "youtube": "https://www.youtube.com/@RESCUETEAMTRAINING",
     "facebook": ""
   },
   "legal": {
