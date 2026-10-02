@@ -6,13 +6,13 @@
  *   GET  /auth      → inicia OAuth de GitHub para Decap CMS (popup)
  *   GET  /callback  → canjea el code por token y lo entrega a Decap vía postMessage
  *   POST /contact   → valida, verifica Turnstile y procesa el lead en Brevo:
- *                     notificación interna + alta en lista + acuse al usuario
- *                     + doble opt-in de newsletter (si lo marcó)
+ *                      notificación interna + alta en lista + acuse al usuario
+ *                      + doble opt-in de newsletter (si lo marcó)
  *   GET  /health    → comprobación de estado
  *   cron diario     → purga de contactos caducados (art. 5.1.e RGPD)
  *
  * SECRETOS CIFRADOS (`wrangler secret put`): GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET,
- *                                            TURNSTILE_SECRET, BREVO_API_KEY
+ *                                           TURNSTILE_SECRET, BREVO_API_KEY
  * VARIABLES: ver wrangler.toml [vars]
  *
  * Controles OWASP: validación estricta (A03), CORS/Origin en lista blanca (A01/A05),
