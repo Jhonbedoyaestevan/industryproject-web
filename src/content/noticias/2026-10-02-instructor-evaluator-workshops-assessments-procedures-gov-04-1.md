@@ -6,6 +6,8 @@ categoria: Noticias del bufete
 resumen: "Este documento establece el marco para la planificación, organización
   y ejecución de los talleres y evaluaciones para instructores y evaluadores de
   ITRA en todas las disciplinas. "
+imagen: /assets/uploads/inverse-no-text-large.jpg
+imagen_alt: "ID de ITRA #23947 Membresía Professional "
 ---
 ITRA publica el nuevo procedimiento oficial para la organización de talleres de Instructores y Evaluadores
 
