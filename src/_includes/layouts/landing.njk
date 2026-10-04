@@ -1,0 +1,24 @@
+---
+layout: layouts/base.njk
+---
+{# Plantilla para páginas de servicio orientadas a búsquedas (SEO) #}
+<section class="page-hero">
+  <div class="container container-narrow">
+    <nav class="breadcrumb" aria-label="Migas de pan"><a href="/">Inicio</a> <span aria-hidden="true">/</span> <a href="/#servicios">Servicios</a></nav>
+    {% if antetitulo %}<p class="eyebrow">{{ antetitulo }}</p>{% endif %}
+    <h1>{{ titulo_h1 or title }}</h1>
+    {% if entradilla %}<p class="landing-lead">{{ entradilla }}</p>{% endif %}
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="/#contacto">{{ cta or "Solicitar presupuesto" }}</a>
+      {% if site.redes.whatsapp %}<a class="btn btn-outline" href="https://wa.me/{{ site.redes.whatsapp | replace(' ', '') | replace('+', '') }}" rel="noopener" target="_blank">Escribir por WhatsApp</a>{% endif %}
+    </div>
+  </div>
+</section>
+<div class="container container-narrow prose">
+  {{ content | safe }}
+</div>
+<div class="container container-narrow post-footer">
+  <a class="btn btn-outline" href="/#servicios">← Ver todos los servicios</a>
+  <a class="btn btn-primary" href="/#contacto">{{ cta or "Solicitar presupuesto" }}</a>
+</div>
+{% if schema %}<script type="application/ld+json">{{ schema | dump | safe }}</script>{% endif %}

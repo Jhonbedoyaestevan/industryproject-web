@@ -240,3 +240,8 @@ p { margin: 0 0 1em; }
 .notfound { text-align: center; padding: 6rem 0; }
 
 @media print { .site-header, .consent, .site-footer, .hero-actions { display: none !important; } }
+
+/* Páginas de servicio (SEO) */
+.page-hero .landing-lead { font-size: 1.12rem; color: var(--ink, #0e2238); max-width: 62ch; margin: .6rem 0 1.4rem; }
+.service-link { display: inline-block; margin-top: .6rem; font-weight: 600; color: #8a5c00; text-decoration: none; }
+.service-link:hover, .service-link:focus-visible { text-decoration: underline; }

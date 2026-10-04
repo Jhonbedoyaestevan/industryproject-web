@@ -44,6 +44,8 @@ permalink: /
         <span class="service-icon">{{ icon(s.icono) }}</span>
         <h3>{{ s.titulo }}</h3>
         <p>{{ s.descripcion }}</p>
+        {% if s.icono == "andamio" %}<a class="service-link" href="/cursos-itra/">Cursos ITRA y formación →</a>{% endif %}
+        {% if s.icono == "cuerda" %}<a class="service-link" href="/lineas-de-vida/">Líneas de vida en toda España →</a>{% endif %}
       </article>
       {% endfor %}
     </div>
