@@ -42,9 +42,9 @@ MAIL_FROM_NAME   = "Industry Project"
 MAIL_REPLY_TO    = "jhon@industryproject.net"
 
 # --- Brevo: IDs que imprime `node scripts/brevo-setup.mjs` ---------------------
-BREVO_LIST_LEADS            = "0"   # Lista «Web · Contactos»
-BREVO_LIST_NEWSLETTER       = "0"   # Lista «Web · Newsletter (doble opt-in)»
-BREVO_DOI_TEMPLATE_ID       = "0"   # Plantilla de doble opt-in (etiqueta «optin»)
+BREVO_LIST_LEADS            = "3"   # Lista «Web · Contactos»
+BREVO_LIST_NEWSLETTER       = "4"   # Lista «Web · Newsletter (doble opt-in)»
+BREVO_DOI_TEMPLATE_ID       = "1"   # Plantilla de doble opt-in (etiqueta «optin»)
 BREVO_TEMPLATE_CONFIRMACION = "0"   # Opcional: plantilla propia de acuse; 0 = plantilla integrada
 DOI_REDIRECT_URL            = "https://industryproject.net/suscripcion-confirmada/"
 
