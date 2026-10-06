@@ -1,5 +1,5 @@
 ---
-title: "Intalación de linea de Vida en Cubierta Industrial "
+title: "Instalación de linea de Vida en Cubierta Industrial "
 date: 2026-10-06
 draft: false
 categoria: Ingeniería
