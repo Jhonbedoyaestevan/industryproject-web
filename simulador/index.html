@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RigCalc Rescate · Simulador de fuerzas para rescate con cuerdas | Industry Project</title>
+<meta name="description" content="Simulador visual de fuerzas para trabajos en altura y rescate con cuerdas: claridad, anclajes, ángulo crítico, desvíos, cargas cruzadas, mono·bí·trípode y tirolinas. Acceso por invitación para técnicos y formadores.">
+<link rel="canonical" href="https://industryproject.net/simulador/">
+<meta property="og:title" content="RigCalc Rescate · Cada fuerza, con su ecuación">
+<meta property="og:description" content="Simulador visual de fuerzas para rescate con cuerdas. Acceso por invitación para técnicos y formadores.">
+<meta property="og:image" content="https://industryproject.net/simulador/img/accion.webp">
+<meta property="og:type" content="website">
+<style>
+@font-face{font-family:"Barlow Condensed";font-weight:700;font-display:swap;src:url(fonts/barlow-condensed-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow Condensed";font-weight:800;font-display:swap;src:url(fonts/barlow-condensed-latin-800-normal.woff2) format("woff2")}
+@font-face{font-family:"Source Sans 3";font-weight:400;font-display:swap;src:url(fonts/source-sans-3-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Source Sans 3";font-weight:600;font-display:swap;src:url(fonts/source-sans-3-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Source Sans 3";font-weight:700;font-display:swap;src:url(fonts/source-sans-3-latin-700-normal.woff2) format("woff2")}
+:root{--bg:#0d1620;--panel:#16222e;--line:#2a3846;--ink:#f3f5f7;--muted:#aeb9c4;--soft:#d5dce3;--accent:#f26a21;--accent-ink:#0d1620;--ok:#5cb87a;--bad:#ef6a5f}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.55 "Source Sans 3",system-ui,sans-serif}
+a{color:var(--accent)}
+img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding-left:20px;padding-right:20px}
+h1,h2,h3{font-family:"Barlow Condensed",sans-serif;font-weight:800;line-height:1;margin:0;letter-spacing:.2px}
+.kicker{font:700 15px/1 "Barlow Condensed",sans-serif;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin:0 0 12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 24px;border-radius:10px;font-weight:700;text-decoration:none;border:2px solid var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{color:var(--ink);border-color:var(--line)}
+.btn:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #6aa8d6;outline-offset:2px}
+section{padding:72px 0}
+section+section{border-top:1px solid var(--line)}
+.lead{font-size:20px;color:var(--soft);max-width:640px}
+
+/* portada */
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px;align-items:center;padding-top:56px}
+.hero h1{font-size:clamp(56px,9vw,104px);margin-bottom:18px}
+.hero h1 span{color:var(--accent)}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero figure{margin:0;border-radius:16px;overflow:hidden;border-bottom:8px solid var(--accent);aspect-ratio:4/5}
+.hero figure img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.badge{display:inline-block;margin-top:22px;font-size:15px;color:var(--muted)}
+
+/* qué es */
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:32px}
+.card{background:var(--panel);border-radius:14px;padding:24px}
+.card h3{font-size:28px;margin-bottom:8px}
+.card p{margin:0;color:var(--soft)}
+
+/* módulos */
+.mods{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;margin-top:32px}
+.mod{background:var(--panel);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.mod .pic{background:#fff;aspect-ratio:3/2;display:flex;align-items:center;justify-content:center;padding:10px}
+.mod .pic img{width:100%;height:100%;object-fit:contain}
+.mod .txt{padding:18px 20px 22px}
+.mod .n{font:800 32px/1 "Barlow Condensed",sans-serif;color:var(--accent)}
+.mod h3{font-size:28px;margin:4px 0 6px}
+.mod p{margin:0;color:var(--soft);font-size:16px}
+.mod code{font:600 15px "Source Sans 3",sans-serif;color:var(--ink);background:var(--bg);padding:2px 6px;border-radius:5px}
+
+/* acceso */
+.steps{list-style:none;counter-reset:s;padding:0;margin:32px 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.steps li{counter-increment:s;background:var(--panel);border-radius:14px;padding:22px}
+.steps li::before{content:counter(s,decimal-leading-zero);display:block;font:800 40px/1 "Barlow Condensed",sans-serif;color:var(--accent);margin-bottom:10px}
+.steps b{display:block;font-size:19px;margin-bottom:4px}
+.steps span{color:var(--soft);font-size:16px}
+
+/* autor */
+.author{display:grid;grid-template-columns:220px minmax(0,1fr);gap:36px;align-items:center}
+.author img{width:220px;height:220px;border-radius:50%;object-fit:cover;border:6px solid var(--accent)}
+.author h2{font-size:52px;margin-bottom:6px}
+.author .cert{color:var(--muted);letter-spacing:1px;margin:0 0 16px}
+.author p{color:var(--soft);margin:0 0 10px}
+
+/* formulario */
+.formbox{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:40px;align-items:start}
+form{background:var(--panel);border-radius:16px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+form .full{grid-column:1/-1}
+label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:16px}
+label small{font-weight:400;color:var(--muted)}
+input,select,textarea{font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:11px 12px;min-height:46px}
+textarea{min-height:110px;resize:vertical}
+.check{flex-direction:row;align-items:flex-start;gap:10px;font-weight:400;color:var(--soft)}
+.check input{min-height:auto;width:20px;height:20px;margin-top:3px;accent-color:var(--accent);flex:none}
+.legal{font-size:13px;color:var(--muted);margin:0}
+.hp{position:absolute;left:-5000px}
+.aviso-ok{display:none;margin-bottom:18px;padding:16px 18px;border-radius:10px;border:2px solid var(--ok);color:var(--ink);background:rgba(92,184,122,.12)}
+.aviso-ok:target,.aviso-ok.on{display:block}
+form .btn{border:0;cursor:pointer;font-size:17px}
+
+.note{background:var(--panel);border-radius:14px;padding:20px 24px;color:var(--soft);font-size:16px}
+footer{padding:36px 0 48px;color:var(--muted);font-size:15px;border-top:1px solid var(--line)}
+
+@media (max-width:900px){
+  .hero,.formbox,.author{grid-template-columns:1fr}
+  .hero figure{aspect-ratio:16/10;order:-1}
+  .three{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .author img{width:160px;height:160px}
+}
+@media (max-width:560px){
+  section{padding:52px 0}
+  .steps{grid-template-columns:1fr}
+  form{grid-template-columns:1fr;padding:20px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<main>
+  <section class="wrap hero" aria-labelledby="t-hero">
+    <div>
+      <p class="kicker">Nuevo · simulador de fuerzas</p>
+      <h1 id="t-hero">Rig<span>Calc</span> Rescate</h1>
+      <p class="lead">Mueve la carga, el anclaje o el mástil y mira al instante cuánta fuerza recibe cada punto de tu sistema de cuerdas, con la ecuación paso a paso y el factor de seguridad.</p>
+      <div class="cta">
+        <a class="btn primary" href="#solicitud">Solicitar acceso</a>
+        <a class="btn ghost" href="#modulos">Ver los 7 módulos</a>
+      </div>
+      <p class="badge">Acceso por invitación para técnicos de acceso por cuerda, rescate y formadores. ¿Ya estás autorizado? <a href="https://simulador.industryproject.net/" rel="noopener">Abrir el simulador →</a></p>
+    </div>
+    <figure><img src="img/accion.webp" alt="Técnico de acceso por cuerda trabajando en una estructura metálica" width="1000" height="1500"></figure>
+  </section>
+
+  <section class="wrap" aria-labelledby="t-que">
+    <p class="kicker">Qué es</p>
+    <h2 id="t-que" style="font-size:52px">Ver las fuerzas antes de montar</h2>
+    <p class="lead" style="margin-top:14px">Nace en el aula: las fuerzas que hasta ahora se explicaban en la pizarra con un solo caso, el alumno las ve cambiar mientras arrastra.</p>
+    <div class="three">
+      <div class="card"><h3>Ves las fuerzas</h3><p>Esquemas a escala con puntos que se arrastran. Cada cambio de ángulo o de posición recalcula todo en milisegundos.</p></div>
+      <div class="card"><h3>Cálculo que se audita</h3><p>Debajo de cada esquema, el paso a paso con la ecuación y los números sustituidos, para repetirlo con calculadora.</p></div>
+      <div class="card"><h3>Criterios de seguridad</h3><p>Factor de seguridad de anclajes, cuerda con su nudo y equipo, con referencias UNE-EN 795, 355, 360, 1891 y manuales de fabricante.</p></div>
+    </div>
+  </section>
+
+  <section class="wrap" id="modulos" aria-labelledby="t-mod">
+    <p class="kicker">7 módulos</p>
+    <h2 id="t-mod" style="font-size:52px">Cada fuerza, con su ecuación</h2>
+    <div class="mods">
+      <article class="mod"><div class="pic"><img src="img/claridad.webp" alt="Esquema de requerimiento de claridad" loading="lazy" width="720" height="429"></div><div class="txt"><span class="n">01</span><h3>Requerimiento de claridad</h3><p>Altura libre necesaria en FC 0, 1 y 2, fuerza de choque y apertura del absorbedor EN 355.</p></div></article>
+      <article class="mod"><div class="pic"><img src="img/anclajes.webp" alt="Esquema de reparto entre dos anclajes" loading="lazy" width="720" height="401"></div><div class="txt"><span class="n">02</span><h3>Anclajes</h3><p>Tensión de cada pata, extracción y cortante, y la cuerda con su nudo. <code>T₁ = W·sen β ÷ sen(α+β)</code></p></div></article>
+      <article class="mod"><div class="pic"><img src="img/angulo-critico.webp" alt="Gráfica de fuerza por pata según el ángulo" loading="lazy" width="720" height="375"></div><div class="txt"><span class="n">03</span><h3>Ángulo crítico</h3><p>A 120° cada anclaje soporta el 100 % de la carga. <code>T = W ÷ (2·cos(θ/2))</code></p></div></article>
+      <article class="mod"><div class="pic"><img src="img/desvios.webp" alt="Esquema de un desvío en pared" loading="lazy" width="720" height="385"></div><div class="txt"><span class="n">04</span><h3>Desvíos</h3><p>Fuerza en el desvío y cuándo hay que duplicarlo. <code>R = 2·T·sen(δ/2)</code></p></div></article>
+      <article class="mod"><div class="pic"><img src="img/cargas-cruzadas.webp" alt="Esquema de cargas cruzadas entre dos torres" loading="lazy" width="720" height="299"></div><div class="txt"><span class="n">05</span><h3>Cargas cruzadas</h3><p>Dos torres, desvíos en altura y descensores en la base: la carga se traslada y se eleva.</p></div></article>
+      <article class="mod"><div class="pic"><img src="img/mono-bi-tripode.webp" alt="Esquema de un mástil con viento trasero y resultante" loading="lazy" width="720" height="458"></div><div class="txt"><span class="n">06</span><h3>Mono · bí · trípode</h3><p>Resultante, compresión del mástil, vientos con diseño ±15° y el láser que avisa del vuelco.</p></div></article>
+      <article class="mod"><div class="pic"><img src="img/tirolinas.webp" alt="Esquema de una tirolina sobre un río" loading="lazy" width="720" height="457"></div><div class="txt"><span class="n">07</span><h3>Tirolinas</h3><p>Fuerzas en cabeceras en todo el recorrido y tracción real con MAESTRO, CLUTCH o I'D y polipasto.</p></div></article>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="t-acc">
+    <p class="kicker">Cómo funciona el acceso</p>
+    <h2 id="t-acc" style="font-size:52px">Por invitación, sin contraseñas</h2>
+    <ol class="steps">
+      <li><b>Solicitas acceso</b><span>Con el formulario de esta página, contando para qué lo usarás.</span></li>
+      <li><b>Revisamos tu solicitud</b><span>Damos prioridad a técnicos y formadores que se comprometen a dar su opinión.</span></li>
+      <li><b>Recibes la invitación</b><span>Te escribimos al correo con el enlace al simulador.</span></li>
+      <li><b>Entras con un código</b><span>Cada vez que entras, te llega un código de un solo uso al correo. Sin contraseñas.</span></li>
+    </ol>
+  </section>
+
+  <section class="wrap" aria-labelledby="t-aut">
+    <div class="author">
+      <img src="img/autor.webp" alt="Jhon Estevan Bedoya Bedoya" width="400" height="400" loading="lazy">
+      <div>
+        <p class="kicker">Autor</p>
+        <h2 id="t-aut">Jhon Estevan Bedoya Bedoya</h2>
+        <p class="cert">IRATA L3 · ITRA L3 · NFPA 1041 · PMP</p>
+        <p>Más de doce años en acceso por cuerda, rescate industrial, espacios confinados y respuesta a emergencias en Latinoamérica y Europa. Formador de técnicos de rescate y acceso por cuerda.</p>
+        <p>RigCalc Rescate nace de la necesidad de que el alumno vea las fuerzas, no solo que las memorice.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="t-tut">
+    <p class="kicker">Formación</p>
+    <h2 id="t-tut" style="font-size:52px">Tutoriales</h2>
+    <p class="lead" style="margin-top:14px">Próximamente, un vídeo por módulo en el canal de YouTube <a href="https://www.youtube.com/@RESCUETEAMTRAINING" rel="noopener">@RESCUETEAMTRAINING</a>.</p>
+  </section>
+
+  <section class="wrap" id="solicitud" aria-labelledby="t-sol">
+    <div class="formbox">
+      <div>
+        <p class="kicker">Solicitud de acceso</p>
+        <h2 id="t-sol" style="font-size:52px">Pide tu invitación</h2>
+        <p class="lead" style="margin-top:14px">Cuéntanos quién eres y para qué quieres usar el simulador. A cambio, te pedimos tu opinión: dentro de la app hay un botón para enviarla en un minuto.</p>
+      </div>
+      <!-- Formulario Brevo «RigCalc solicitud de acceso» → lista «RigCalc · Solicitudes» (doble opt-in). Atributos: EMAIL, NOMBRE, ORIGEN, EMPRESA, JOB_TITLE, SERVICIO, COMERCIAL_SOLICITADO, COMERCIAL_FECHA (= compromiso de opinión), OPT_IN -->
+      <div class="aviso-ok" id="confirmado" role="status"><strong>Correo confirmado.</strong> Gracias: tu solicitud ya está en revisión. Te escribiremos a este mismo correo cuando tu acceso esté aprobado.</div>
+      <div class="aviso-ok" id="enviado" role="status"><strong>Solicitud recibida.</strong> Revisa tu correo y confirma tu dirección pulsando el enlace que te hemos enviado. Te escribiremos cuando tu acceso esté aprobado.</div>
+      <form method="POST" action="https://15e9be23.sibforms.com/serve/MUIFABkxslXgVu7Y0IlZaNX87ky2qwN2Cfr0YwdmXP8E6ZEZXCO9ETmMdftqYHHfDbk0Cj36MZHJXwPHzulGFjjH_VB2DbwnaetUXJ3WkEoJmevLccj_MnZmnud-wwiVQRxZB4jUgLVbiSHsQuhHTxYwvrXS1JWWYv2pju53hFB67_dvwJSuIc_LEboOv7cvCc777y6YWCNFNKsUGQ==" autocomplete="on">
+        <label>Nombre y apellidos<input name="NOMBRE" required maxlength="80" autocomplete="name"></label>
+        <label>Correo electrónico<small>el que usarás para entrar</small><input name="EMAIL" type="email" required maxlength="120" autocomplete="email"></label>
+        <label>País<input name="ORIGEN" required maxlength="60" autocomplete="country-name"></label>
+        <label>Perfil
+          <select name="JOB_TITLE" required>
+            <option value="">Elige una opción</option>
+            <option>Técnico de acceso por cuerda</option>
+            <option>Rescate técnico</option>
+            <option>Bombero</option>
+            <option>Instructor / formador</option>
+            <option>Ingeniero / prevencionista</option>
+            <option>Estudiante</option>
+            <option>Otro</option>
+          </select></label>
+        <label>Certificaciones<small>opcional: IRATA, ITRA, SPRAT, GWO, NFPA…</small><input name="COMERCIAL_SOLICITADO" maxlength="120"></label>
+        <label>Empresa u organización<small>opcional</small><input name="EMPRESA" maxlength="120" autocomplete="organization"></label>
+        <label class="full">¿Para qué quieres usar el simulador?<textarea name="SERVICIO" required minlength="20" maxlength="500"></textarea></label>
+        <label class="check full"><input type="checkbox" name="COMERCIAL_FECHA" value="Sí"> <span>Me comprometo a enviar mi opinión después de usarlo.</span></label>
+        <label class="check full"><input type="checkbox" name="OPT_IN" value="1" required> <span>He leído y acepto la <a href="/politica-de-privacidad/">política de privacidad</a>. Mis datos se usan solo para gestionar el acceso al simulador y avisarme de sus novedades.</span></label>
+        <input class="hp" type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="locale" value="es">
+        <p class="legal full">Responsable: Jhon Estevan Bedoya Bedoya (Industry Project). Finalidad: gestionar tu solicitud de acceso. Base: tu consentimiento. Puedes ejercer tus derechos de acceso, rectificación y supresión escribiendo al correo de contacto de la web.</p>
+        <button class="btn primary full" type="submit">Enviar solicitud</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <p class="note"><b>Aviso.</b> RigCalc Rescate es una herramienta de formación y de análisis previo. Sus cálculos son estáticos e idealizados y no sustituyen el manual del fabricante, la evaluación de un técnico competente ni la normativa aplicable a cada instalación.</p>
+  </section>
+</main>
+<footer><div class="wrap">© 2026 Jhon Estevan Bedoya Bedoya · RigCalc Rescate · <a href="/">industryproject.net</a></div></footer>
+<script>["enviado","confirmado"].forEach(function(k){if(new RegExp("[?&]"+k+"=1").test(location.search)){var a=document.getElementById(k);a.classList.add("on");a.scrollIntoView({block:"center"});}});</script>
+</body>
+</html>
