@@ -1,0 +1,15 @@
+/* RigCalc Rescate · estilos propios de /simulador/ (se apoya en style.css del sitio) */
+.sim-hero-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr); gap: 2.5rem; align-items: center; }
+.sim-hero-pic { margin: 0; }
+.sim-hero-pic img { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow); }
+.sim-note { font-size: .92rem; }
+.sim-media { aspect-ratio: 16 / 10; background: #fff; }
+.sim-media img { object-fit: contain; padding: .4rem; }
+.sim-eq { font-size: .88rem; background: var(--bg-alt); padding: .15rem .45rem; border-radius: 4px; }
+.sim-steps { list-style: none; counter-reset: paso; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; }
+.sim-steps li { counter-increment: paso; background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1.3rem 1.3rem 1.4rem; display: flex; flex-direction: column; gap: .4rem; }
+.sim-steps li::before { content: counter(paso); display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--navy-800); color: #fff; font-weight: 700; }
+.sim-steps span { color: var(--muted); font-size: .95rem; }
+.sim-ok { margin-bottom: 1.4rem; padding: 1rem 1.2rem; border-radius: var(--radius); border: 2px solid var(--ok); background: rgba(29, 122, 70, .08); }
+.sim-aviso { color: var(--muted); font-size: .92rem; margin: 0; }
+@media (max-width: 800px) { .sim-hero-grid { grid-template-columns: 1fr; } .sim-hero-pic img { max-height: 280px; } }

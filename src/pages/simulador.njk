@@ -1,0 +1,166 @@
+---
+layout: layouts/base.njk
+permalink: /simulador/
+title: RigCalc Rescate · Simulador de fuerzas para rescate con cuerdas
+description: Simulador visual de fuerzas para trabajos en altura y rescate con cuerdas. Siete módulos con la ecuación paso a paso. Acceso por invitación para técnicos y formadores.
+imagen: /assets/img/simulador/accion.webp
+formBrevo: true
+---
+{#- Formulario Brevo «RigCalc solicitud de acceso» → lista «RigCalc · Solicitudes» (doble opt-in).
+    Atributos: EMAIL, NOMBRE, ORIGEN, EMPRESA, JOB_TITLE, SERVICIO, COMERCIAL_SOLICITADO, COMERCIAL_FECHA (= compromiso de opinión), OPT_IN.
+    form-action de Brevo autorizado en la CSP: base.njk (meta, solo con formBrevo) y regla de Cloudflare. -#}
+{%- set brevoAction = "https://15e9be23.sibforms.com/serve/MUIFABkxslXgVu7Y0IlZaNX87ky2qwN2Cfr0YwdmXP8E6ZEZXCO9ETmMdftqYHHfDbk0Cj36MZHJXwPHzulGFjjH_VB2DbwnaetUXJ3WkEoJmevLccj_MnZmnud-wwiVQRxZB4jUgLVbiSHsQuhHTxYwvrXS1JWWYv2pju53hFB67_dvwJSuIc_LEboOv7cvCc777y6YWCNFNKsUGQ==" -%}
+{%- set appUrl = "https://simulador.industryproject.net/" -%}
+<link rel="stylesheet" href="/assets/css/simulador.css">
+
+<section class="page-hero sim-hero">
+  <div class="container sim-hero-grid">
+    <div>
+      <nav class="breadcrumb" aria-label="Migas de pan"><a href="/">Inicio</a> <span aria-hidden="true">/</span> Simulador</nav>
+      <p class="eyebrow">Nuevo · simulador de fuerzas</p>
+      <h1>RigCalc Rescate</h1>
+      <p class="landing-lead">Mueve la carga, el anclaje o el mástil y mira al instante cuánta fuerza recibe cada punto de tu sistema de cuerdas, con la ecuación paso a paso y el factor de seguridad.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#solicitud">Solicitar acceso</a>
+        <a class="btn btn-outline" href="{{ appUrl }}">Entrar al simulador</a>
+      </div>
+      <p class="sim-note">Acceso por invitación para técnicos de acceso por cuerda, rescate y formadores. Si ya estás autorizado, entra con tu correo: recibirás un código y la sesión dura 24 horas.</p>
+    </div>
+    <figure class="sim-hero-pic"><img src="/assets/img/simulador/accion.webp" alt="Técnico de acceso por cuerda trabajando en una estructura metálica" width="1000" height="1500"></figure>
+  </div>
+</section>
+
+<section class="section" id="modulos">
+  <div class="container">
+    <div class="section-header">
+      <p class="eyebrow">7 módulos</p>
+      <h2>Ver las fuerzas antes de montar</h2>
+      <p>Nace en el aula: las fuerzas que hasta ahora se explicaban en la pizarra con un solo caso, el alumno las ve cambiar mientras arrastra. Cada módulo muestra su ecuación.</p>
+    </div>
+    <div class="cards-grid">
+      {%- set modulos = [
+        ["claridad", "Requerimiento de claridad", "Altura libre necesaria en FC 0, 1 y 2, fuerza de choque y apertura del absorbedor EN 355.", "", "Esquema de requerimiento de claridad"],
+        ["anclajes", "Anclajes", "Tensión de cada pata, extracción y cortante, y la cuerda con su nudo.", "T₁ = W·sen β ÷ sen(α+β)", "Esquema de reparto entre dos anclajes"],
+        ["angulo-critico", "Ángulo crítico", "A 120° cada anclaje soporta el 100 % de la carga.", "T = W ÷ (2·cos(θ/2))", "Gráfica de fuerza por pata según el ángulo"],
+        ["desvios", "Desvíos", "Fuerza en el desvío y cuándo hay que duplicarlo.", "R = 2·T·sen(δ/2)", "Esquema de un desvío en pared"],
+        ["cargas-cruzadas", "Cargas cruzadas", "Dos torres, desvíos en altura y descensores en la base: la carga se traslada y se eleva.", "", "Esquema de cargas cruzadas entre dos torres"],
+        ["mono-bi-tripode", "Mono · bí · trípode", "Resultante, compresión del mástil, vientos con diseño ±15° y el láser que avisa del vuelco.", "", "Esquema de un mástil con viento trasero y resultante"],
+        ["tirolinas", "Tirolinas", "Fuerzas en cabeceras en todo el recorrido y tracción real con MAESTRO, CLUTCH o I'D y polipasto.", "", "Esquema de una tirolina sobre un río"]
+      ] -%}
+      {%- for m in modulos %}
+      <article class="card">
+        <div class="card-media sim-media"><img src="/assets/img/simulador/{{ m[0] }}.webp" alt="{{ m[4] }}" loading="lazy" width="720" height="430"></div>
+        <div class="card-body">
+          <span class="chip">Módulo {{ loop.index }}</span>
+          <h3 class="card-title">{{ m[1] }}</h3>
+          <p>{{ m[2] }}</p>
+          {% if m[3] %}<p><code class="sim-eq">{{ m[3] }}</code></p>{% endif %}
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <p class="eyebrow">Cómo funciona el acceso</p>
+      <h2>Por invitación, sin contraseñas</h2>
+    </div>
+    <ol class="sim-steps">
+      <li><strong>Solicitas acceso</strong><span>Con el formulario de esta página, contando para qué lo usarás.</span></li>
+      <li><strong>Confirmas tu correo</strong><span>Te llega un enlace de confirmación. Sin confirmar, la solicitud no se tramita.</span></li>
+      <li><strong>Revisamos tu solicitud</strong><span>Damos prioridad a técnicos y formadores que se comprometen a dar su opinión.</span></li>
+      <li><strong>Entras desde esta página</strong><span>Pulsa «Entrar al simulador», escribe tu correo y el código que recibes. La sesión dura 24 horas: no te pedirá otro código hasta pasado ese tiempo.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="solicitud">
+  <div class="container container-narrow">
+    <div class="section-header">
+      <p class="eyebrow">Solicitud de acceso</p>
+      <h2>Pide tu invitación</h2>
+      <p>Cuéntanos quién eres y para qué quieres usar el simulador. A cambio, te pedimos tu opinión: dentro de la app hay un botón para enviarla en un minuto.</p>
+    </div>
+    <div class="sim-ok" id="confirmado" role="status" hidden><strong>Correo confirmado.</strong> Tu solicitud ya está en revisión. Te escribiremos a este mismo correo cuando tu acceso esté aprobado.</div>
+    <div class="sim-ok" id="enviado" role="status" hidden><strong>Solicitud recibida.</strong> Revisa tu correo y confirma tu dirección pulsando el enlace que te hemos enviado (mira también en spam).</div>
+    <form class="contact-form" method="POST" action="{{ brevoAction }}" autocomplete="on">
+      <div class="form-grid">
+        <div class="field">
+          <label for="sim-nombre">Nombre y apellidos <span aria-hidden="true">*</span></label>
+          <input id="sim-nombre" name="NOMBRE" type="text" autocomplete="name" required minlength="2" maxlength="80">
+        </div>
+        <div class="field">
+          <label for="sim-email">Correo electrónico <span aria-hidden="true">*</span></label>
+          <input id="sim-email" name="EMAIL" type="email" autocomplete="email" required maxlength="120" aria-describedby="sim-email-ayuda">
+          <small id="sim-email-ayuda">El que usarás para entrar al simulador.</small>
+        </div>
+        <div class="field">
+          <label for="sim-pais">País <span aria-hidden="true">*</span></label>
+          <input id="sim-pais" name="ORIGEN" type="text" autocomplete="country-name" required maxlength="60">
+        </div>
+        <div class="field">
+          <label for="sim-perfil">Perfil <span aria-hidden="true">*</span></label>
+          <select id="sim-perfil" name="JOB_TITLE" required>
+            <option value="">Seleccione una opción</option>
+            <option>Técnico de acceso por cuerda</option>
+            <option>Rescate técnico</option>
+            <option>Bombero</option>
+            <option>Instructor / formador</option>
+            <option>Ingeniero / prevencionista</option>
+            <option>Estudiante</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="sim-cert">Certificaciones</label>
+          <input id="sim-cert" name="COMERCIAL_SOLICITADO" type="text" maxlength="120" placeholder="IRATA, ITRA, SPRAT, GWO, NFPA…">
+        </div>
+        <div class="field">
+          <label for="sim-empresa">Empresa u organización</label>
+          <input id="sim-empresa" name="EMPRESA" type="text" autocomplete="organization" maxlength="120">
+        </div>
+        <div class="field field-full">
+          <label for="sim-motivo">¿Para qué quieres usar el simulador? <span aria-hidden="true">*</span></label>
+          <textarea id="sim-motivo" name="SERVICIO" rows="4" required minlength="20" maxlength="500"></textarea>
+        </div>
+        <div class="hp" aria-hidden="true">
+          <label for="sim-hp">No rellenar</label>
+          <input id="sim-hp" name="email_address_check" type="text" tabindex="-1" autocomplete="off" value="">
+        </div>
+        <input type="hidden" name="locale" value="es">
+        <div class="field field-full check">
+          <input id="sim-feedback" name="COMERCIAL_FECHA" type="checkbox" value="Sí">
+          <label for="sim-feedback">Me comprometo a enviar mi opinión después de usarlo.</label>
+        </div>
+        <div class="field field-full check">
+          <input id="sim-privacidad" name="OPT_IN" type="checkbox" value="1" required>
+          <label for="sim-privacidad">He leído y acepto la <a href="/privacidad/" target="_blank" rel="noopener">Política de privacidad</a> y consiento el tratamiento de mis datos para gestionar mi acceso al simulador. Recibiré un correo para confirmar mi dirección (doble opt-in). <span aria-hidden="true">*</span></label>
+        </div>
+      </div>
+      <table class="info-basica">
+        <caption>Información básica sobre protección de datos</caption>
+        <tbody>
+          <tr><th scope="row">Responsable</th><td>{{ site.legal.titular }}</td></tr>
+          <tr><th scope="row">Finalidad</th><td>Gestionar su solicitud de acceso al simulador RigCalc Rescate, comunicarle la resolución y recoger su opinión sobre la herramienta.</td></tr>
+          <tr><th scope="row">Legitimación</th><td>Su consentimiento (art. 6.1.a RGPD).</td></tr>
+          <tr><th scope="row">Destinatarios</th><td>Proveedores tecnológicos que actúan como encargados (Brevo, Cloudflare). No se ceden datos a terceros salvo obligación legal.</td></tr>
+          <tr><th scope="row">Derechos</th><td>Acceso, rectificación, supresión, oposición, limitación y portabilidad: {{ site.legal.email_privacidad }}</td></tr>
+          <tr><th scope="row">Más información</th><td><a href="/privacidad/">Política de privacidad</a></td></tr>
+        </tbody>
+      </table>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Enviar solicitud</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container container-narrow">
+    <p class="sim-aviso"><strong>Aviso.</strong> RigCalc Rescate es una herramienta de formación y de análisis previo. Sus cálculos son estáticos e idealizados y no sustituyen el manual del fabricante, la evaluación de un técnico competente ni la normativa aplicable a cada instalación. Tutoriales por módulo, próximamente en el canal de YouTube <a href="https://www.youtube.com/@RESCUETEAMTRAINING" rel="noopener">@RESCUETEAMTRAINING</a>.</p>
+  </div>
+</section>
+<script src="/assets/js/simulador.js" defer></script>

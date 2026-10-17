@@ -39,7 +39,7 @@ const CSP_PUBLIC = [
   "font-src 'self'",
   `connect-src 'self' https://cloudflareinsights.com ${API_ORIGIN}`,
   "frame-src https://challenges.cloudflare.com",
-  `form-action 'self' ${API_ORIGIN}`,
+  `form-action 'self' ${API_ORIGIN} https://15e9be23.sibforms.com`, // + formulario Brevo de /simulador/
   "object-src 'none'",
   "base-uri 'self'",
   "manifest-src 'self'",

@@ -11,7 +11,7 @@
     - Sin 'unsafe-inline' ni 'unsafe-eval' en el sitio público.
     - frame-ancestors / report-uri NO son válidos en <meta> (ver Dossier §2.6).
   #}
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://challenges.cloudflare.com https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://cloudflareinsights.com{% if workerOrigin %} {{ workerOrigin }}{% endif %}; frame-src https://challenges.cloudflare.com; form-action 'self'{% if workerOrigin %} {{ workerOrigin }}{% endif %}; object-src 'none'; base-uri 'self'; manifest-src 'self'; worker-src 'none'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://challenges.cloudflare.com https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://cloudflareinsights.com{% if workerOrigin %} {{ workerOrigin }}{% endif %}; frame-src https://challenges.cloudflare.com; form-action 'self'{% if workerOrigin %} {{ workerOrigin }}{% endif %}{% if formBrevo %} https://15e9be23.sibforms.com{% endif %}; object-src 'none'; base-uri 'self'; manifest-src 'self'; worker-src 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="color-scheme" content="light">
   <title>{{ pageTitle }}</title>
