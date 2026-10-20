@@ -7,7 +7,7 @@ imagen: /assets/img/simulador/accion.webp
 formBrevo: true
 ---
 {#- Formulario Brevo «RigCalc solicitud de acceso» → lista «RigCalc · Solicitudes» (doble opt-in).
-    Atributos: EMAIL, NOMBRE, ORIGEN, EMPRESA, JOB_TITLE, SERVICIO, COMERCIAL_SOLICITADO, COMERCIAL_FECHA (= compromiso de opinión), OPT_IN.
+   Atributos: EMAIL, NOMBRE, PAIS, EMPRESA, JOB_TITLE, MOTIVO, CERTIFICACIONES, COMPROMISO_OPINION, OPT_IN.
     form-action de Brevo autorizado en la CSP: base.njk (meta, solo con formBrevo) y regla de Cloudflare. -#}
 {%- set brevoAction = "https://15e9be23.sibforms.com/serve/MUIFABkxslXgVu7Y0IlZaNX87ky2qwN2Cfr0YwdmXP8E6ZEZXCO9ETmMdftqYHHfDbk0Cj36MZHJXwPHzulGFjjH_VB2DbwnaetUXJ3WkEoJmevLccj_MnZmnud-wwiVQRxZB4jUgLVbiSHsQuhHTxYwvrXS1JWWYv2pju53hFB67_dvwJSuIc_LEboOv7cvCc777y6YWCNFNKsUGQ==" -%}
 {%- set appUrl = "https://simulador.industryproject.net/" -%}
@@ -99,7 +99,7 @@ formBrevo: true
         </div>
         <div class="field">
           <label for="sim-pais">País <span aria-hidden="true">*</span></label>
-          <input id="sim-pais" name="ORIGEN" type="text" autocomplete="country-name" required maxlength="60">
+          <input id="sim-pais" name="PAIS" type="text" autocomplete="country-name" required maxlength="60">
         </div>
         <div class="field">
           <label for="sim-perfil">Perfil <span aria-hidden="true">*</span></label>
@@ -116,7 +116,7 @@ formBrevo: true
         </div>
         <div class="field">
           <label for="sim-cert">Certificaciones</label>
-          <input id="sim-cert" name="COMERCIAL_SOLICITADO" type="text" maxlength="120" placeholder="IRATA, ITRA, SPRAT, GWO, NFPA…">
+          <input id="sim-cert" name="CERTIFICACIONES" type="text" maxlength="120" placeholder="IRATA, ITRA, SPRAT, GWO, NFPA…">
         </div>
         <div class="field">
           <label for="sim-empresa">Empresa u organización</label>
@@ -124,7 +124,7 @@ formBrevo: true
         </div>
         <div class="field field-full">
           <label for="sim-motivo">¿Para qué quieres usar el simulador? <span aria-hidden="true">*</span></label>
-          <textarea id="sim-motivo" name="SERVICIO" rows="4" required minlength="20" maxlength="500"></textarea>
+          <textarea id="sim-motivo" name="MOTIVO" rows="4" required minlength="20" maxlength="200"></textarea>
         </div>
         <div class="hp" aria-hidden="true">
           <label for="sim-hp">No rellenar</label>
@@ -132,7 +132,7 @@ formBrevo: true
         </div>
         <input type="hidden" name="locale" value="es">
         <div class="field field-full check">
-          <input id="sim-feedback" name="COMERCIAL_FECHA" type="checkbox" value="Sí">
+          <input id="sim-feedback" name="COMPROMISO_OPINION" type="checkbox" value="Sí">
           <label for="sim-feedback">Me comprometo a enviar mi opinión después de usarlo.</label>
         </div>
         <div class="field field-full check">
