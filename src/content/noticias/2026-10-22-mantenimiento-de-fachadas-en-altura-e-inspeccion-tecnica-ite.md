@@ -6,7 +6,7 @@ categoria: Ingeniería
 resumen: Servicios de mantenimiento, limpieza y reparación de fachadas mediante
   trabajos verticales. Garantizamos la conservación de materiales y el
   cumplimiento de la ITE/IEE.
-imagen: /assets/uploads/gemini_generated_image_n0wz8vn0wz8vn0wz.jpeg
+imagen: /assets/uploads/80ed40c8-c027-4716-a2f3-af91be772d9f.jpg
 imagen_alt: Trabajos Verticales
 ---
 # Mantenimiento Integral de Fachadas en Altura y Cumplimiento de la ITE
@@ -15,7 +15,7 @@ El mantenimiento periódico de las fachadas es fundamental para garantizar la **
 
 En **Industry Project** ejecutamos trabajos de rehabilitación y mantenimiento de fachadas mediante **técnicas de acceso por cuerda (trabajos verticales)**, eliminando el coste y la molestia del montaje de andamios tradicionales.
 
----
+
 
 ## ¿Por qué es vital el Mantenimiento de Fachadas?
 
@@ -28,7 +28,7 @@ La acumulación de suciedad, moho, eflorescencias salinas y excrementos de aves 
 ### 3. Garantía para Aprobar la ITE / IEE
 La Inspección Técnica de Edificios evalúa el estado de conservación de elementos estructurales, cubiertas, fachadas y chimeneas. Realizar un mantenimiento preventivo documentado evita dictámenes desfavorables y sanciones administrativas por parte de los ayuntamientos.
 
----
+
 
 ## Servicios de Mantenimiento de Fachadas que Ofrecemos
 
@@ -38,7 +38,7 @@ La Inspección Técnica de Edificios evalúa el estado de conservación de eleme
 * **Pintado e hidrofugación:** Aplicación de revestimientos elásticos impermeables y de alta transpirabilidad.
 * **Informes técnicos de inspección:** Dictámenes y evaluaciones de riesgo firmados por técnicos competentes.
 
----
+
 
 ## Ventajas de la Ejecución mediante Trabajos Verticales
 
@@ -47,7 +47,8 @@ La Inspección Técnica de Edificios evalúa el estado de conservación de eleme
 3. **Mínima afección a la vía pública:** Sin licencias de ocupación de acera complejas ni molestias para inquilinos o comercios.
 4. **Cumplimiento normativo estricto:** Equipos y técnicos certificados bajo el **RD 2177/2004**, Ley 31/95 y estándares **IRATA / ITRA**.
 
----
+
 
 ### ¿Su edificio necesita pasar la ITE o reparar su fachada?
-[Solicite una evaluación técnica sin compromiso por WhatsApp](https://wa.me/34643993660)
+
+Solicite una evaluación técnica sin compromiso
