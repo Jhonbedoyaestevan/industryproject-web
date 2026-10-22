@@ -1,5 +1,5 @@
 ---
-title: "Instalación de linea de Vida en Cubierta Industrial "
+title: Instalación y Certificación de Líneas de Vida EN 795 | Industry Project
 date: 2026-10-06
 draft: false
 categoria: Ingeniería
