@@ -7,7 +7,7 @@ resumen: Servicios de ingeniería para la instalación, certificación e inspecc
   anual de líneas de vida flexibles y rígidas (UNE-EN 795). Ensayos de carga y
   memoria técnica en toda España.
 imagen: /assets/uploads/rooftop-lifeline-safety-installation.png
-imagen_alt: "Instalación LV en Cubierta "
+imagen_alt: "Instalación Linea de Vida en Cubierta "
 ---
 Las naves industriales con cubierta en diente de sierra son habituales en el tejido productivo español: 
 
