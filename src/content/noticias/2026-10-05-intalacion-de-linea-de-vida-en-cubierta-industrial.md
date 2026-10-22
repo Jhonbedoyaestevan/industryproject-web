@@ -1,10 +1,11 @@
 ---
-title: Instalación y Certificación de Líneas de Vida EN 795 | Industry Project
+title: Instalación, Inspección y Certificación de Líneas de Vida EN 795
 date: 2026-10-06
 draft: false
 categoria: Ingeniería
-resumen: Explicamos, etapa por etapa, cómo evaluamos la viabilidad técnica,
-  económica y legal de una línea de vida en cubiertas industriales
+resumen: Servicios de ingeniería para la instalación, certificación e inspección
+  anual de líneas de vida flexibles y rígidas (UNE-EN 795). Ensayos de carga y
+  memoria técnica en toda España.
 imagen: /assets/uploads/rooftop-lifeline-safety-installation.png
 imagen_alt: "Instalación LV en Cubierta "
 ---
