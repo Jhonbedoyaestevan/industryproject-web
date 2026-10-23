@@ -3,7 +3,16 @@
 {%- set pageDesc = (resumen or description or site.descripcion) -%}
 <!doctype html>
 <html lang="es">
-<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YH2EHF6NQG">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YH2EHF6NQG');
+</script><head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {#
