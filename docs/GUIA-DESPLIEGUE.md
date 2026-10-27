@@ -113,7 +113,7 @@ GitHub redirige `www` a la raíz automáticamente.
 ### 5.1 Correo entrante (Cloudflare Email Routing)
 
 1. En Cloudflare, vaya a **Email → Email Routing → Get started**. Acepte los registros MX y SPF que propone.
-2. En **Destination addresses**, añada `jhon.ingeniero@outlook.es` y confírmelo desde su buzón.
+2. En **Destination addresses**, añada `jhon@industryproject.net` y confírmelo desde su buzón.
 3. En **Routing rules**, cree estas reglas:
    - `contacto@industryproject.net` → su Outlook.
    - `privacidad@industryproject.net` → su Outlook.
