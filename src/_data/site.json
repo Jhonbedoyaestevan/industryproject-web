@@ -35,34 +35,40 @@
       "icono": "cuerda",
       "descripcion": "Diseño, instalación, revisión periódica y certificación de líneas de vida continuas (EN 795) y sistemas de anclaje para cubiertas y naves industriales.",
       "enlace_texto": "Líneas de vida y anclajes en toda España",
-      "enlace_url": "/lineas-de-vida/"
+      "enlace_url": "/lineas-de-vida/",
+      "imagen": "/assets/uploads/rooftop-lifeline-safety-installation.png"
     },
     {
       "titulo": "Trabajos Verticales y Rescate",
       "icono": "cuerda",
-      "descripcion": "Ingeniería de accesos por cuerda, mantenimiento en altura y planes de rescate en espacios confinados conforme al RD 2177/04, Ley 31/95 e IRATA/ITRA."
+      "descripcion": "Ingeniería de accesos por cuerda, mantenimiento en altura y planes de rescate en espacios confinados conforme al RD 2177/04, Ley 31/95 e IRATA/ITRA.",
+      "imagen": "/assets/uploads/68b45332-b3d9-4673-81b6-802a358605b5.jpeg"
     },
     {
       "titulo": "Curso de Altura, Confinados, Rescate, Verticales, Itra",
       "icono": "tablero",
       "descripcion": "Capacitación homologada en trabajos en altura, espacios confinados, uso de líneas de vida, equipos de rescate, plataformas elevadoras y carretillas.",
       "enlace_texto": "Ver cursos y matricularme",
-      "enlace_url": "/formacion/"
+      "enlace_url": "/formacion/",
+      "imagen": "/assets/uploads/gemini_generated_image_1e03ft1e03ft1e03.jpeg"
     },
     {
       "titulo": "Seguridad Industrial y PRL",
       "icono": "escudo",
-      "descripcion": "Evaluación de riesgos laborales, planes de autoprotección y emergencia, auditorías de cumplimiento normativo y adecuación de procedimientos."
+      "descripcion": "Evaluación de riesgos laborales, planes de autoprotección y emergencia, auditorías de cumplimiento normativo y adecuación de procedimientos.",
+      "imagen": "/assets/uploads/gemini_generated_image_1e03ft1e03ft1e03.jpeg"
     },
     {
       "titulo": "Peritajes Técnicos de Accidentes",
       "icono": "lupa",
-      "descripcion": "Informes periciales de parte e investigación técnica de accidentes de trabajo en tareas de alto riesgo y dictámenes documentados."
+      "descripcion": "Informes periciales de parte e investigación técnica de accidentes de trabajo en tareas de alto riesgo y dictámenes documentados.",
+      "imagen": "/assets/uploads/gemini_generated_image_81t1f381t1f381t1.jpeg"
     },
     {
       "titulo": "Ingeniería Industrial y Proyectos",
       "icono": "engranaje",
-      "descripcion": "Proyectos técnicos, adecuación de instalaciones y maquinaria, legalizaciones industriales y dirección de proyectos bajo estándares PMI."
+      "descripcion": "Proyectos técnicos, adecuación de instalaciones y maquinaria, legalizaciones industriales y dirección de proyectos bajo estándares PMI.",
+      "imagen": "/assets/uploads/gemini_generated_image_b61o03b61o03b61o.jpeg"
     }
   ],
   "redes": {
