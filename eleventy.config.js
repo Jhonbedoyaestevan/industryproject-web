@@ -35,6 +35,11 @@ export default function (eleventyConfig) {
   eleventyConfig.addCollection("proyectos", (api) =>
     api.getFilteredByGlob("src/content/proyectos/*.md").filter(published).reverse()
   );
+  // Formación: se ordena por el número "orden" del CMS (menor = primero)
+  eleventyConfig.addCollection("formacion", (api) =>
+    api.getFilteredByGlob("src/content/formacion/*.md").filter(published)
+      .sort((a, b) => (a.data.orden ?? 99) - (b.data.orden ?? 99) || String(a.data.title).localeCompare(String(b.data.title), "es"))
+  );
 
   // --- Filtros ---------------------------------------------------------------
   eleventyConfig.addFilter("fechaES", (value) => {

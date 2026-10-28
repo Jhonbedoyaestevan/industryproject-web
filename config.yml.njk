@@ -1,0 +1,186 @@
+---
+permalink: /admin/config.yml
+eleventyExcludeFromCollections: true
+---
+# =============================================================================
+# Decap CMS — configuración generada en compilación (no editar en /_site)
+# Fuente: src/admin/config.yml.njk · repo/rama/worker llegan por variables de entorno
+# Ninguna credencial aparece aquí: el login usa OAuth de GitHub vía Cloudflare Worker.
+# =============================================================================
+backend:
+  name: github
+  repo: {{ env.githubRepo }}
+  branch: {{ env.cmsBranch }}
+  base_url: {{ env.workerUrl or "https://CONFIGURA-WORKER_URL.workers.dev" }}
+  auth_endpoint: auth
+  squash_merges: true
+  commit_messages:
+    create: "contenido({% raw %}{{collection}}{% endraw %}): crear «{% raw %}{{slug}}{% endraw %}»"
+    update: "contenido({% raw %}{{collection}}{% endraw %}): actualizar «{% raw %}{{slug}}{% endraw %}»"
+    delete: "contenido({% raw %}{{collection}}{% endraw %}): eliminar «{% raw %}{{slug}}{% endraw %}»"
+    uploadMedia: "media: subir «{% raw %}{{path}}{% endraw %}»"
+    deleteMedia: "media: eliminar «{% raw %}{{path}}{% endraw %}»"
+{% if not env.isProd %}
+# Solo en desarrollo local (npx decap-server). Se omite en producción.
+local_backend: true
+{% endif %}
+publish_mode: simple
+locale: es
+site_url: {{ env.siteUrl }}
+display_url: {{ env.siteUrl }}
+media_folder: src/assets/uploads
+public_folder: /assets/uploads
+{% raw %}
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+
+collections:
+  # ---------------------------------------------------------------- NOTICIAS
+  - name: noticias
+    label: Noticias
+    label_singular: Noticia
+    description: "Artículos del blog técnico. Publique uno nuevo cada semana."
+    folder: src/content/noticias
+    extension: md
+    format: frontmatter
+    create: true
+    delete: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    sortable_fields: [date, title]
+    summary: "{{title}} — {{date | date('DD/MM/YYYY')}}"
+    fields:
+      - { label: "Título", name: title, widget: string, pattern: ['^.{5,120}$', "Entre 5 y 120 caracteres"] }
+      - { label: "Fecha de publicación", name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+      - { label: "Borrador (no publicar)", name: draft, widget: boolean, default: false, required: false }
+      - label: "Categoría"
+        name: categoria
+        widget: select
+        options: ["Ingeniería", "Peritajes", "Economía", "Seguridad industrial", "Normativa", "Gestión de proyectos", "Noticias del bufete"]
+      - { label: "Resumen (tarjeta y SEO)", name: resumen, widget: text, pattern: ['^[\s\S]{20,220}$', "Entre 20 y 220 caracteres"] }
+      - { label: "Imagen de portada", name: imagen, widget: image, required: false, choose_url: false, hint: "JPG/WebP horizontal, máx. ~400 KB. Sin personas identificables sin su consentimiento." }
+      - { label: "Texto alternativo de la imagen", name: imagen_alt, widget: string, required: false, hint: "Describe la imagen para accesibilidad." }
+      - { label: "Contenido", name: body, widget: markdown, buttons: [bold, italic, link, heading-two, heading-three, quote, bulleted-list, numbered-list], editor_components: [image] }
+
+  # --------------------------------------------------------------- PROYECTOS
+  - name: proyectos
+    label: Proyectos
+    label_singular: Proyecto
+    description: "Trabajos realizados. No publique nombres de clientes sin autorización escrita."
+    folder: src/content/proyectos
+    extension: md
+    format: frontmatter
+    create: true
+    delete: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    sortable_fields: [date, title]
+    fields:
+      - { label: "Título", name: title, widget: string, pattern: ['^.{5,120}$', "Entre 5 y 120 caracteres"] }
+      - { label: "Fecha", name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+      - { label: "Borrador (no publicar)", name: draft, widget: boolean, default: false, required: false }
+      - { label: "Sector", name: sector, widget: string, required: false }
+      - { label: "Cliente (solo con autorización escrita)", name: cliente, widget: string, required: false }
+      - { label: "Ubicación", name: ubicacion, widget: string, required: false }
+      - { label: "Resumen", name: resumen, widget: text, pattern: ['^[\s\S]{20,220}$', "Entre 20 y 220 caracteres"] }
+      - { label: "Imagen", name: imagen, widget: image, required: false, choose_url: false }
+      - { label: "Texto alternativo", name: imagen_alt, widget: string, required: false }
+      - { label: "Descripción del proyecto", name: body, widget: markdown, buttons: [bold, italic, link, heading-two, heading-three, quote, bulleted-list, numbered-list], editor_components: [image] }
+
+  # --------------------------------------------------------------- FORMACION
+  - name: formacion
+    label: Formación
+    label_singular: Curso
+    description: "Cursos que aparecen en la sección Formación. El número 'Orden' decide la posición (1 = primero)."
+    folder: src/content/formacion
+    extension: md
+    format: frontmatter
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    sortable_fields: [orden, title]
+    summary: "{{orden}} · {{title}}"
+    fields:
+      - { label: "Título del curso", name: title, widget: string, pattern: ['^.{5,120}$', "Entre 5 y 120 caracteres"] }
+      - { label: "Orden", name: orden, widget: number, value_type: int, min: 1, default: 10, hint: "1 aparece primero." }
+      - { label: "Borrador (no publicar)", name: draft, widget: boolean, default: false, required: false }
+      - { label: "Etiqueta del curso", name: categoria, widget: string, required: false, hint: "Texto libre que aparece como etiqueta en la tarjeta. Ejemplos: Trabajo en altura, ITRA, Rescate. Escriba la que quiera." }
+      - { label: "Resumen (tarjeta y SEO)", name: resumen, widget: text, pattern: ['^[\s\S]{20,220}$', "Entre 20 y 220 caracteres"] }
+      - { label: "Puntos destacados (aparecen en la tarjeta)", name: puntos, widget: list, required: false, max: 4, hint: "Hasta 4 frases cortas. Ejemplo: Práctica con equipos reales.", field: { label: Punto, name: punto, widget: string } }
+      - { label: "Duración", name: duracion, widget: string, required: false, hint: "Ejemplo: 8 horas, 2 días, 40 horas." }
+      - { label: "Modalidad", name: modalidad, widget: string, required: false, hint: "Ejemplo: Presencial, en centro de formación o en sus instalaciones." }
+      - { label: "Certificación", name: certificacion, widget: string, required: false, hint: "Solo lo que realmente se emite. Déjelo vacío si no está confirmado." }
+      - { label: "Imagen del curso", name: imagen, widget: image, required: false, choose_url: false, hint: "Horizontal 16:10, mín. 1200×750 px, JPG/WebP optimizado. Sin personas identificables sin su consentimiento." }
+      - { label: "Texto alternativo de la imagen", name: imagen_alt, widget: string, required: false, hint: "Describe la imagen para accesibilidad." }
+      - { label: "Contenido del curso", name: body, widget: markdown, buttons: [bold, italic, link, heading-two, heading-three, quote, bulleted-list, numbered-list], editor_components: [image] }
+
+  # ----------------------------------------------------------------- AJUSTES
+  - name: ajustes
+    label: Ajustes del sitio
+    editor: { preview: false }
+    files:
+      - name: general
+        label: "Perfil, servicios, redes y datos legales"
+        file: src/_data/site.json
+        format: json
+        fields:
+          - { label: "Nombre comercial (marca)", name: marca, widget: string }
+          - { label: "Lema", name: lema, widget: string }
+          - { label: "Descripción SEO", name: descripcion, widget: text }
+          - { label: "Nombre del profesional", name: nombre, widget: string }
+          - { label: "Cargo", name: cargo, widget: string }
+          - { label: "Titular de autoridad", name: titular, widget: string }
+          - { label: "Subtítulo", name: subtitulo, widget: text }
+          - { label: "Foto profesional", name: foto, widget: image, choose_url: false, hint: "Cuadrada, mín. 800×800 px." }
+          - { label: "Texto alternativo de la foto", name: foto_alt, widget: string }
+          - { label: "Credenciales", name: credenciales, widget: list, field: { label: Credencial, name: credencial, widget: string } }
+          - label: "Servicios"
+            name: servicios
+            widget: list
+            summary: "{{fields.titulo}}"
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Icono", name: icono, widget: select, options: [engranaje, lupa, grafico, escudo, tablero, cuerda] }
+              - { label: "Descripción", name: descripcion, widget: text }
+              - { label: "Foto del servicio", name: imagen, widget: image, choose_url: false, required: false, hint: "Horizontal 16:10, mín. 1200×750 px, JPG optimizado" }
+              - { label: "Texto alternativo de la foto", name: imagen_alt, widget: string, required: false }
+              - { label: "Texto del enlace", name: enlace_texto, widget: string, required: false }
+              - { label: "Dirección del enlace", name: enlace_url, widget: string, required: false, hint: "Por ejemplo /lineas-de-vida/ o /cursos-itra/" }
+          - label: "Redes y contacto"
+            name: redes
+            widget: object
+            fields:
+              - { label: "LinkedIn (URL)", name: linkedin, widget: string, required: false }
+              - { label: "WhatsApp (número con prefijo)", name: whatsapp, widget: string, required: false }
+              - { label: "Correo público", name: email, widget: string, required: false }
+              - { label: "X (URL)", name: x, widget: string, required: false }
+              - { label: "Instagram (URL)", name: instagram, widget: string, required: false }
+              - { label: "YouTube (URL)", name: youtube, widget: string, required: false }
+              - { label: "Facebook (URL)", name: facebook, widget: string, required: false }
+          - label: "Datos legales (LSSI-CE art. 10 / RGPD art. 13)"
+            name: legal
+            widget: object
+            fields:
+              - { label: "Titular", name: titular, widget: string }
+              - { label: "NIF/CIF", name: nif, widget: string }
+              - { label: "Forma jurídica", name: forma_juridica, widget: string }
+              - { label: "Domicilio", name: domicilio, widget: string }
+              - { label: "Correo de privacidad", name: email_privacidad, widget: string }
+              - { label: "Registro Mercantil (si sociedad)", name: registro_mercantil, widget: string, required: false }
+              - { label: "Colegio profesional", name: colegio_profesional, widget: string, required: false }
+              - { label: "Título y Estado de expedición/homologación", name: titulo_profesional, widget: string, required: false }
+              - { label: "Delegado de Protección de Datos (si procede)", name: dpd, widget: string, required: false }
+              - { label: "Representante en la UE (si procede)", name: representante_ue, widget: string, required: false }
+              - { label: "Versión de políticas", name: version_politicas, widget: string, hint: "Súbala al cambiar las políticas: se volverá a pedir el consentimiento de cookies." }
+              - { label: "Fecha de políticas (AAAA-MM-DD)", name: fecha_politicas, widget: string }
+      - name: formacion_pagina
+        label: "Página de Formación (introducción e imagen)"
+        file: src/_data/formacion_pagina.json
+        format: json
+        fields:
+          - { label: "Antetítulo", name: antetitulo, widget: string, required: false }
+          - { label: "Título", name: titulo, widget: string }
+          - { label: "Texto de introducción", name: intro, widget: text }
+          - { label: "Imagen principal", name: imagen, widget: image, required: false, choose_url: false, hint: "Horizontal 16:10, mín. 1200×750 px." }
+          - { label: "Texto alternativo de la imagen", name: imagen_alt, widget: string, required: false }
+{% endraw %}

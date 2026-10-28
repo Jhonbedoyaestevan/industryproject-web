@@ -1,0 +1,100 @@
+---
+layout: layouts/base.njk
+title: "Industry Project | Líneas de Vida, Trabajos Verticales y Formación PRL"
+description: "Especialistas en instalación y certificación de líneas de vida, trabajos verticales en altura y formación homologada en PRL y seguridad industrial."
+permalink: /
+---
+{% from "partials/icons.njk" import icon %}
+
+<section class="hero hero-split" id="perfil" aria-labelledby="hero-title">
+  <figure class="hero-photo">
+    <img src="/assets/uploads/hero-vertical-day.jpg" alt="Técnicos de acceso por cuerda trabajando en la fachada del teatro romano de Orange durante el Vertical Day 2026" width="1200" height="1200" fetchpriority="high">
+    <figcaption>Foto tomada por Jacinto B. · Evento internacional Vertical Day 2026</figcaption>
+  </figure>
+  <div class="hero-text">
+    <p class="eyebrow">Ingeniería y Seguridad Industrial</p>
+    <h1 id="hero-title">Líneas de vida, <strong>trabajos verticales</strong> y formación PRL</h1>
+    <p class="hero-lead">Instalación, certificación e inspección de sistemas anticaídas, ejecuciones en altura y cursos de capacitación homologados.</p>
+    {% if site.credenciales.length %}
+    <ul class="badges" aria-label="Certificaciones">
+      {% for c in site.credenciales %}{% if loop.index <= 3 %}<li>{{ c }}</li>{% endif %}{% endfor %}
+    </ul>
+    {% endif %}
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#contacto">Solicitar propuesta</a>
+      <a class="btn btn-outline" href="#servicios">Ver servicios</a>
+    </div>
+    {% set socialClass = "social-hero" %}{% include "partials/social.njk" %}
+  </div>
+</section>
+
+<section class="section" id="servicios" aria-labelledby="servicios-title">
+  <div class="container">
+    <header class="section-header">
+      <p class="eyebrow">Soluciones Integrales</p>
+      <h2 id="servicios-title">Servicios de Ingeniería y Seguridad en Altura</h2>
+      <p>Especialistas en prevención de riesgos laborales (PRL), certificación de sistemas anticaídas y trabajos verticales de alta complejidad.</p>
+    </header>
+    <div class="services-grid">
+      {% for s in site.servicios %}
+      <article class="service">
+        {% if s.imagen %}<div class="service-media"><img src="{{ s.imagen }}" alt="{{ s.imagen_alt }}" width="800" height="500" loading="lazy" decoding="async"></div>{% endif %}
+        <span class="service-icon">{{ icon(s.icono) }}</span>
+        <h3>{{ s.titulo }}</h3>
+        <p>{{ s.descripcion }}</p>
+        {% if s.enlace_url %}<a class="service-link" href="{{ s.enlace_url }}">{{ s.enlace_texto or "Más información" }} →</a>{% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% if collections.proyectos.length %}
+<section class="section section-alt" id="proyectos" aria-labelledby="proyectos-title">
+  <div class="container">
+    <header class="section-header section-header-row">
+      <div>
+        <p class="eyebrow">Trabajos realizados</p>
+        <h2 id="proyectos-title">Proyectos destacados</h2>
+      </div>
+      <a class="btn btn-outline btn-sm" href="/proyectos/">Ver todos</a>
+    </header>
+    <div class="cards-grid">
+      {% for item in collections.proyectos | limit(3) %}{% include "partials/card.njk" %}{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section" id="noticias" aria-labelledby="noticias-title">
+  <div class="container">
+    <header class="section-header section-header-row">
+      <div>
+        <p class="eyebrow">Blog técnico</p>
+        <h2 id="noticias-title">Últimas noticias y normativa</h2>
+      </div>
+      <a class="btn btn-outline btn-sm" href="/noticias/">Ver todas</a>
+    </header>
+    {% if collections.noticias.length %}
+    <div class="cards-grid">
+      {% for item in collections.noticias | limit(3) %}{% include "partials/card.njk" %}{% endfor %}
+    </div>
+    {% else %}
+    <p>Próximamente publicaremos artículos técnicos sobre normativa PRL y seguridad industrial.</p>
+    {% endif %}
+  </div>
+</section>
+
+<section class="section section-dark" id="contacto" aria-labelledby="contacto-title">
+  <div class="container contact-grid">
+    <div class="contact-intro">
+      <p class="eyebrow">Hablemos</p>
+      <h2 id="contacto-title">Cuéntenos su proyecto</h2>
+      <p>Respondemos en un plazo máximo de 48 horas laborables. Para consultas urgentes sobre instalaciones o formación, contáctenos vía WhatsApp.</p>
+      {% set socialClass = "social-contact" %}{% include "partials/social.njk" %}
+    </div>
+    <div class="contact-card">
+      {% include "partials/contact-form.njk" %}
+    </div>
+  </div>
+</section>

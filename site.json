@@ -1,0 +1,81 @@
+{
+  "foto": "/assets/img/IMAGEN PW.png",
+  "titular": "Ingeniería de Accesos, Instalación de Líneas de Vida y Formación PRL",
+  "nombre": "Jhon Estevan Bedoya B",
+  "logo": "src/assets/img/Logo Proyecto si fondo.JPG",
+  "lema": "Líneas de Vida · Trabajos Verticales · Formación PRL & ITRA",
+  "descripcion": "Especialistas en instalación y certificación de líneas de vida, ingeniería de trabajos verticales en altura, peritajes técnicos y formación homologada en PRL.",
+  "foto_alt": "Retrato profesional de Ing. Jhon Estevan Bedoya Bedoya",
+  "logo_alt": "Logotipo oficial de Industry Project",
+  "credenciales": [
+    "IRATA Nivel 3 - ITRA Nivel 3",
+    "PMP® · PMI",
+    "NFPA 1041",
+    "ESPECIALISTA B & I",
+    "AUTOMATIZACIÓN Y GESTIÓN B2B",
+    "INTERNAL AUDITOR ISO 9001, ISO 14001 & ISO 45001",
+    "INGENIERIA APLICADA A LA EXCELENCIA OPERACIONAL"
+  ],
+  "subtitulo": "Más de doce años de experiencia en ingeniería de seguridad en altura, instalación de anclajes homologados y formación técnica avanzada en España y Latinoamérica.",
+  "legal": {
+    "fecha_politicas": "2026-10-01",
+    "domicilio": "Av. Galicia, 68, As Pontes de García Rodríguez (A Coruña), España",
+    "titulo_profesional": "TECNOLOGO EN GESTION DE LA SEGURIDAD Y SALUD EN EL TRABAJO",
+    "forma_juridica": "Profesional Independiente",
+    "titular": "Jhon Estevan Bedoya Bedoya",
+    "representante_ue": "",
+    "nif": "60155323-L",
+    "email_privacidad": "jhon@industryproject.net",
+    "registro_mercantil": "",
+    "colegio_profesional": "",
+    "dpd": "",
+    "version_politicas": "1.1"
+  },
+  "marca": "Industry Project",
+  "cargo": "Director técnico · Ingeniería aplicada a la seguridad industrial y trabajos en altura",
+  "servicios": [
+    {
+      "titulo": "Líneas de Vida y Anclajes",
+      "icono": "cuerda",
+      "descripcion": "Diseño, instalación, revisión periódica y certificación de líneas de vida continuas (EN 795) y sistemas de anclaje para cubiertas y naves industriales.",
+      "enlace_texto": "Líneas de vida y anclajes en toda España",
+      "enlace_url": "/lineas-de-vida/"
+    },
+    {
+      "titulo": "Trabajos Verticales y Rescate",
+      "icono": "cuerda",
+      "descripcion": "Ingeniería de accesos por cuerda, mantenimiento en altura y planes de rescate en espacios confinados conforme al RD 2177/04, Ley 31/95 e IRATA/ITRA."
+    },
+    {
+      "titulo": "Curso de Altura, Confinados, Rescate, Verticales, Itra",
+      "icono": "tablero",
+      "descripcion": "Capacitación homologada en trabajos en altura, espacios confinados, uso de líneas de vida, equipos de rescate, plataformas elevadoras y carretillas.",
+      "enlace_texto": "Ver cursos y matricularme",
+      "enlace_url": "/formacion/"
+    },
+    {
+      "titulo": "Seguridad Industrial y PRL",
+      "icono": "escudo",
+      "descripcion": "Evaluación de riesgos laborales, planes de autoprotección y emergencia, auditorías de cumplimiento normativo y adecuación de procedimientos."
+    },
+    {
+      "titulo": "Peritajes Técnicos de Accidentes",
+      "icono": "lupa",
+      "descripcion": "Informes periciales de parte e investigación técnica de accidentes de trabajo en tareas de alto riesgo y dictámenes documentados."
+    },
+    {
+      "titulo": "Ingeniería Industrial y Proyectos",
+      "icono": "engranaje",
+      "descripcion": "Proyectos técnicos, adecuación de instalaciones y maquinaria, legalizaciones industriales y dirección de proyectos bajo estándares PMI."
+    }
+  ],
+  "redes": {
+    "linkedin": "https://www.linkedin.com/in/ingindutrial",
+    "whatsapp": "+34 643 99 36 60",
+    "email": "jhon@industryproject.net",
+    "x": "",
+    "instagram": "https://www.instagram.com/estevanbyrescate/",
+    "youtube": "https://www.youtube.com/@RESCUETEAMTRAINING",
+    "facebook": ""
+  }
+}
