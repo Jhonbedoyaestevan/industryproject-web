@@ -305,4 +305,4 @@ p { margin: 0 0 1em; }
 .curso-actions{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.25rem;margin-top:auto;padding-top:.75rem}
 .formacion-hero-img{width:100%;height:auto;max-height:340px;object-fit:cover;border-radius:12px;margin:0 0 1.4rem}
 
-.cards-grid-home { grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr)); }
+.cards-grid-home { grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 400px)); justify-content: start; }
