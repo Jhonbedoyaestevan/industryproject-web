@@ -7,9 +7,9 @@ resumen: Formación ITRA en Rope Rescue y Confined Space Rescue, niveles 1 a 3,
   con certificación Internacional. La formación es presencial y se puede dar en
   las instalaciones
 puntos:
-  - Rope Rescue niveles 1 a 3
-  - Confined Space Rescue niveles 1 a 3
-  - "Certificación Internacional "
+  - Rope Rescue niveles 1 a 3, certificado internacional
+  - Confined Space Rescue niveles 1 a 3 certificado internacional
+  - "Certificación Internacional emitido por la  ITRA "
 duracion: 40h
 modalidad: Presencial, en centro de formación o en sus instalaciones
 certificacion: "Internacional "
