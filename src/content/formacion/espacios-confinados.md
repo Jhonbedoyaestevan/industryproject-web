@@ -44,4 +44,4 @@ imagen_alt: "Trabajo en espacios confinados "
 ---
 
 ### 5. Prácticas y Rescate
-* Montaje
+* Montaje, ingreso al espacio confinado, autorescate, rescate de un compañero, cierre de permiso de trabajo y reporte final 
