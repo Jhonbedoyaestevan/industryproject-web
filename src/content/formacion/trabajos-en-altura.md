@@ -1,31 +1,63 @@
 ---
-title: "Trabajos en altura y prevención de caídas"
+title: Trabajos en altura y prevención de caídas
 orden: 1
 draft: false
+categoria: Trabajo en altura
+resumen: "Curso deTrabajos en Altura RD/2177/04 8H "
 puntos:
-  - "EPI anticaídas y líneas de vida"
-  - "Planificación y plan de rescate"
-  - "Práctica supervisada"
-categoria: "Trabajo en altura"
-resumen: "Formación práctica en prevención de caídas, uso correcto de EPI anticaídas, líneas de vida y planificación segura del trabajo en altura."
-duracion: ""
-modalidad: "Presencial, en centro de formación o en sus instalaciones"
-imagen: ""
-imagen_alt: ""
+  - EPI anticaídas y líneas de vida
+  - Planificación y plan de rescate
+  - Práctica supervisada
+duracion: 8H
+modalidad: Presencial, en centro de formación o en sus instalaciones
+certificacion: "De formación y aprovechamiento "
+imagen: /assets/uploads/dscf3578.jpg
+imagen_alt: "Trabajo en talud "
+---
+## Temario y Contenidos Habituales
+
+### 1. Normativa y Marco Legal
+* Ley 31/1995 de Prevención de Riesgos Laborales.
+* Real Decreto 2177/2004 y RD 1215/1997.
+* Responsabilidades del empresario y del trabajador.
+
 ---
 
-## A quién va dirigido
+### 2. Identificación de Riesgos
+* Definición de trabajo en altura (situaciones a más de 2 metros del suelo o con desnivel).
+* Riesgos de caída a distinto nivel, desplomes y atrapamientos.
+* Factores externos (condiciones meteorológicas, viento, tormentas).
 
-A trabajadores, mandos intermedios y responsables de prevención de empresas que realizan tareas en cubiertas, fachadas, estructuras o plataformas elevadas.
+---
 
-## Contenidos orientativos
+### 3. Medidas de Protección
+* **Protección colectiva:** Barandillas, redes de seguridad, pasarelas y plataformas.
+* **Protección individual (EPI):** Arnés de seguridad anticaídas, cascos con barbiquejo, elementos de amarre, absorbedores de energía y conectores.
+* Inspección, colocación, uso y mantenimiento de los EPI.
 
-- Riesgos de caída en altura y jerarquía de medidas preventivas.
-- Elección, revisión y uso de equipos de protección individual contra caídas.
-- Líneas de vida y puntos de anclaje: uso seguro y comprobaciones previas.
-- Planificación del trabajo y plan de rescate.
-- Práctica supervisada.
+---
 
-## Cómo solicitarlo
+### 4. Sistemas de Anclaje y Líneas de Vida
+* Tipos de puntos de anclaje (EN 795).
+* Líneas de vida horizontales y verticales (temporales y permanentes).
+* Técnicas básicas de conexión y progresión segura.
 
-Cuéntenos su actividad y el número de personas en el formulario de contacto y le preparamos una propuesta adaptada.
+---
+
+### 5. Procedimientos de Trabajo Específicos
+* Uso seguro de escaleras de mano y escalas fijas.
+* Montaje, uso y desmontaje de andamios.
+* Trabajos en cubiertas planas e inclinadas.
+
+---
+
+### 6. Planes de Rescate y Emergencia
+* Protocolo básico de actuación ante una caída y el síndrome del arnés (suspensión inerte).
+* Primeros auxilios y rescates verticales básicos.
+
+---
+
+### 7. Parte Práctica (Cursos Presenciales)
+* Puesta y ajuste del arnés.
+* Progresión por estructuras y líneas de vida.
+* Simulación de rescate y suspensión.
