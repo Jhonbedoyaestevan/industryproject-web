@@ -13,7 +13,7 @@ puntos:
 duracion: 40h
 modalidad: Presencial, en centro de formación o en sus instalaciones
 certificacion: "Internacional "
-imagen: /assets/uploads/5be4841d-6561-4e29-a46b-9c3870e5d337.jpeg
+imagen: /assets/uploads/3540993a-fdb9-4492-be51-d024155b3bdb.jpeg
 imagen_alt: "Curso ITRA "
 ---
 ## Qué es ITRA
