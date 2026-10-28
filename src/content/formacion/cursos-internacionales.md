@@ -3,7 +3,7 @@ title: "Cursos internacionales: ITRA e IRATA"
 orden: 6
 draft: false
 categoria: Cursos internacionales
-resumen: Cursos de formación internacional ITRA de rescate y formacion tecnica
+resumen: Cursos de formación internacional ITRA de rescate y formación tecnica
   especializada
 puntos:
   - "ITRA e IRATA ( No somos centro Irata, colaboramos con centros Homologados) "
