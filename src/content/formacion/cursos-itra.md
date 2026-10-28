@@ -62,4 +62,4 @@ Orientado a industrias con depósitos, silos, alcantarillado, galerías o salas 
 Sí. ITRA es un estándar internacional ampliamente reconocido en el sector del rescate técnico. Tenga en cuenta que no sustituye a la formación obligatoria en prevención de riesgos laborales (PRL), la cual también ofrecemos e integramos.
 
 ### ¿Pueden impartir el curso en nuestra empresa?
-Sí. Nos desplazamos a cualquier punto de España con todo el material necesario. Únicamente necesitamos coordinar el
+Sí. Nos desplazamos a cualquier punto de España con todo el material necesario. Únicamente necesitamos coordinar la empresa para hacer la auditoria y mantener los criterios de calidad 
