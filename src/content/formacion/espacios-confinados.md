@@ -1,27 +1,47 @@
 ---
-title: "Trabajos en espacios confinados"
+title: Curso de Trabajos en espacios confinados
 orden: 4
 draft: false
+categoria: Curso Espacios confinados
+resumen: Identificación de riesgos, control de atmósferas, permisos de trabajo y
+  procedimientos de entrada y rescate en espacios confinados.
 puntos:
-  - "Control de atmósferas"
-  - "Permiso de trabajo y vigilancia"
-  - "Procedimientos de emergencia"
-categoria: "Espacios confinados"
-resumen: "Identificación de riesgos, control de atmósferas, permisos de trabajo y procedimientos de entrada y rescate en espacios confinados."
-duracion: ""
-modalidad: "Presencial, en centro de formación o en sus instalaciones"
-imagen: ""
-imagen_alt: ""
+  - "Control de atmósferas, equipamento de ingreso "
+  - Permiso de trabajo y vigilancia
+  - Procedimientos de emergencia
+duracion: 8h
+modalidad: Presencial, en centro de formación o en sus instalaciones
+certificacion: "De aprovechamiento "
+imagen: /assets/uploads/39329cdc-30b6-4e8c-9e80-ddc8eb3f6ee3.jpeg
+imagen_alt: "Trabajo en espacios confinados "
+---
+## Estructura y Temario del Curso
+
+### 1. Teoría: Conceptos y Clasificación
+* Definición y tipología de espacios confinados (silos, arquetas, depósitos, zanjas).
+* Clasificación según el grado de peligrosidad y el estado de la atmósfera.
+
 ---
 
-## A quién va dirigido
+### 2. Teoría: Identificación de Riesgos
+* Riesgos atmosféricos: deficiencia de oxígeno, atmósferas tóxicas, inflamables o explosivas.
+* Riesgos físicos y mecánicos: atrapamientos, caídas, sepultamiento, contactos eléctricos o térmicos.
 
-A personal de industria, mantenimiento, saneamiento y construcción que accede a depósitos, cisternas, galerías u otros espacios confinados.
+---
 
-## Contenidos orientativos
+### 3. Medidas Preventivas y Protocolos
+* Gestión de permisos de trabajo y autorizaciones de entrada.
+* Medición y evaluación de la atmósfera interior (uso de detectores de gases de 4 o más vías).
+* Sistemas de ventilación natural y forzada.
+* Señalización de seguridad y control de accesos.
 
-- Qué es un espacio confinado y riesgos asociados.
-- Control y medición de atmósferas.
-- Permiso de trabajo y vigilancia exterior.
-- Equipos de protección y de rescate.
-- Procedimientos de emergencia.
+---
+
+### 4. Equipos de Protección (EPIs y Colectivos)
+* Equipos de protección individual y respiratoria (equipos autónomos ERA o semiautónomos).
+* Uso de elementos de sujeción, arneses, líneas de vida y trípodes.
+
+---
+
+### 5. Prácticas y Rescate
+* Montaje
