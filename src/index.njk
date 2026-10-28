@@ -59,8 +59,8 @@ permalink: /
       </div>
       <a class="btn btn-outline btn-sm" href="/proyectos/">Ver todos</a>
     </header>
-    <div class="cards-grid">
-      {% for item in collections.proyectos | limit(3) %}{% include "partials/card.njk" %}{% endfor %}
+    <div class="cards-grid cards-grid-home">
+      {% for item in collections.proyectos | limit(4) %}{% include "partials/card.njk" %}{% endfor %}
     </div>
   </div>
 </section>
