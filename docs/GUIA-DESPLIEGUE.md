@@ -9,7 +9,7 @@
 | Sitio web | GitHub Pages detrás de Cloudflare | `https://industryproject.net` |
 | Panel de contenidos | Decap CMS | `https://industryproject.net/admin/` |
 | Backend (OAuth + formulario + Brevo) | Cloudflare Worker | `https://api.industryproject.net` |
-| Correo entrante | Cloudflare Email Routing → su Outlook | `contacto@` / `privacidad@industryproject.net` |
+| Correo entrante | Cloudflare Email Routing → buzón del titular | `contacto@` / `privacidad@industryproject.net` |
 | Correo saliente y contactos | Brevo (UE) | Remitente `no-responder@industryproject.net` |
 
 > **Regla de oro de los secretos.** Las claves privadas (Brevo, Turnstile secret, GitHub client secret, tokens de Cloudflare) **nunca** se escriben en archivos del proyecto, en el chat ni en capturas de pantalla. Se introducen solo en los formularios cifrados de Cloudflare o GitHub y en la terminal cuando el comando las pide. Si alguna se expone por error, revóquela y genere otra.
