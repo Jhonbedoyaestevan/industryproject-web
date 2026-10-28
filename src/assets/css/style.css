@@ -245,3 +245,21 @@ p { margin: 0 0 1em; }
 .page-hero .landing-lead { font-size: 1.12rem; color: var(--ink, #0e2238); max-width: 62ch; margin: .6rem 0 1.4rem; }
 .service-link { display: inline-block; margin-top: .6rem; font-weight: 600; color: #8a5c00; text-decoration: none; }
 .service-link:hover, .service-link:focus-visible { text-decoration: underline; }
+
+/* ---------- Hero dividido (foto izquierda / texto derecha) ---------- */
+.hero.hero-split { display: grid; grid-template-columns: 1.1fr 1fr; padding: 0; min-height: 640px; background: var(--navy-900); }
+.hero-split::after { display: none; }
+.hero-photo { position: relative; margin: 0; min-height: 520px; overflow: hidden; }
+.hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(1.12) contrast(1.15) saturate(1.45); }
+.hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(6,15,26,0) 55%, var(--navy-900) 100%), linear-gradient(0deg, rgba(6,15,26,.55), transparent 28%); pointer-events: none; }
+.hero-photo figcaption { position: absolute; left: 1.5rem; bottom: 1.2rem; z-index: 2; font-size: .8rem; font-weight: 700; color: #e6eef7; text-shadow: 0 1px 6px rgba(0,0,0,.9); }
+.hero-split .hero-text { align-self: center; padding: clamp(2.5rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4.5rem); }
+.hero-split h1 { font-weight: 300; line-height: 1.12; }
+.hero-split h1 strong { font-weight: 800; }
+.hero-split .badges { justify-content: flex-start; margin: 0 0 1.6rem; }
+.hero-split .badges li { text-transform: uppercase; letter-spacing: .05em; }
+@media (max-width: 880px) {
+  .hero.hero-split { grid-template-columns: 1fr; min-height: 0; }
+  .hero-photo { min-height: 320px; }
+  .hero-photo::after { background: linear-gradient(0deg, var(--navy-900) 0%, transparent 45%); }
+}
