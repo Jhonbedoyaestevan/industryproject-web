@@ -4,7 +4,8 @@ orden: 3
 draft: false
 categoria: ITRA
 resumen: Formación ITRA en Rope Rescue y Confined Space Rescue, niveles 1 a 3,
-  con certificación a través de centro autorizado.
+  con certificación Internacional. La formación es presencial y se puede dar en
+  las instalaciones
 puntos:
   - Rope Rescue niveles 1 a 3
   - Confined Space Rescue niveles 1 a 3
@@ -13,9 +14,8 @@ duracion: 40h
 modalidad: Presencial, en centro de formación o en sus instalaciones
 certificacion: "Internacional "
 imagen: /assets/uploads/5be4841d-6561-4e29-a46b-9c3870e5d337.jpeg
-imagen_alt: ""
+imagen_alt: "Curso ITRA "
 ---
-
 ## Qué es ITRA
 
 La **International Technical Rescue Association (ITRA)** es una asociación internacional que define estándares de formación y certificación en rescate técnico. Sus programas se organizan por disciplinas y niveles, con objetivos de aprendizaje teóricos y prácticos comunes en todo el mundo, de modo que un certificado ITRA tiene el mismo significado en España que en cualquier otro país.
