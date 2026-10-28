@@ -10,7 +10,7 @@ puntos:
   - "Sistemas de cuerdas para rescate avanzado "
   - "Evacuación de accidentados en situaciones extremas "
   - "Simulacros en equipo team rescue "
-duracion: 24h
+duracion: 32h
 modalidad: Presencial, en centro de formación o en sus instalaciones
 imagen: /assets/uploads/5de2838f-16af-45f6-8356-ce205fff85eb.jpeg
 imagen_alt: "Equipos de rescate "
