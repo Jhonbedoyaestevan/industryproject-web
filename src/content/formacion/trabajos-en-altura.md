@@ -3,7 +3,8 @@ title: Trabajos en altura y prevención de caídas
 orden: 1
 draft: false
 categoria: Trabajo en altura
-resumen: "Curso deTrabajos en Altura RD/2177/04 8H "
+resumen: "Curso deTrabajos en Altura RD/2177/04 8H.  Se puede dar soporte con la
+  unidad movil de formación, tenemos la capacidad de desplazamiento nacional. "
 puntos:
   - EPI anticaídas y líneas de vida
   - Planificación y plan de rescate
