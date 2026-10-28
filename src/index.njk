@@ -76,8 +76,8 @@ permalink: /
       <a class="btn btn-outline btn-sm" href="/noticias/">Ver todas</a>
     </header>
     {% if collections.noticias.length %}
-    <div class="cards-grid">
-      {% for item in collections.noticias | limit(3) %}{% include "partials/card.njk" %}{% endfor %}
+    <div class="cards-grid cards-grid-home">
+      {% for item in collections.noticias | limit(4) %}{% include "partials/card.njk" %}{% endfor %}
     </div>
     {% else %}
     <p>Próximamente publicaremos artículos técnicos sobre normativa PRL y seguridad industrial.</p>
