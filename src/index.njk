@@ -9,7 +9,7 @@ permalink: /
 <section class="hero hero-split" id="perfil" aria-labelledby="hero-title">
   <figure class="hero-photo">
     <img src="/assets/uploads/hero-vertical-day.jpg" alt="Técnicos de acceso por cuerda trabajando en la fachada del teatro romano de Orange durante el Vertical Day 2026" width="1200" height="1200" fetchpriority="high">
-    <figcaption>Foto tomada por Jacinto B· Evento internacional Vertical Day 2026</figcaption>
+    <figcaption>Foto tomada por Jacinto B. · Evento internacional Vertical Day 2026</figcaption>
   </figure>
   <div class="hero-text">
     <p class="eyebrow">Ingeniería y Seguridad Industrial</p>
@@ -38,11 +38,11 @@ permalink: /
     <div class="services-grid">
       {% for s in site.servicios %}
       <article class="service">
+        {% if s.imagen %}<div class="service-media"><img src="{{ s.imagen }}" alt="{{ s.imagen_alt }}" width="800" height="500" loading="lazy" decoding="async"></div>{% endif %}
         <span class="service-icon">{{ icon(s.icono) }}</span>
         <h3>{{ s.titulo }}</h3>
         <p>{{ s.descripcion }}</p>
-        {% if s.icono == "andamio" %}<a class="service-link" href="/cursos-itra/">Cursos ITRA y formación PRL →</a>{% endif %}
-        {% if s.icono == "cuerda" %}<a class="service-link" href="/lineas-de-vida/">Líneas de vida y anclajes en toda España →</a>{% endif %}
+        {% if s.enlace_url %}<a class="service-link" href="{{ s.enlace_url }}">{{ s.enlace_texto or "Más información" }} →</a>{% endif %}
       </article>
       {% endfor %}
     </div>

@@ -37,7 +37,9 @@
     {
       "titulo": "Líneas de Vida y Anclajes",
       "icono": "cuerda",
-      "descripcion": "Diseño, instalación, revisión periódica y certificación de líneas de vida continuas (EN 795) y sistemas de anclaje para cubiertas y naves industriales."
+      "descripcion": "Diseño, instalación, revisión periódica y certificación de líneas de vida continuas (EN 795) y sistemas de anclaje para cubiertas y naves industriales.",
+      "enlace_texto": "Líneas de vida y anclajes en toda España",
+      "enlace_url": "/lineas-de-vida/"
     },
     {
       "titulo": "Trabajos Verticales y Rescate",
@@ -45,9 +47,11 @@
       "descripcion": "Ingeniería de accesos por cuerda, mantenimiento en altura y planes de rescate en espacios confinados conforme al RD 2177/04, Ley 31/95 e IRATA/ITRA."
     },
     {
-      "titulo": "Formación PRL y Certificaciones ITRA",
-      "icono": "andamio",
-      "descripcion": "Capacitación homologada en trabajos en altura, espacios confinados, uso de líneas de vida, equipos de rescate, plataformas elevadoras y carretillas."
+      "titulo": "Curso de Altura, Confinados, Rescate, Verticales, Itra",
+      "icono": "tablero",
+      "descripcion": "Capacitación homologada en trabajos en altura, espacios confinados, uso de líneas de vida, equipos de rescate, plataformas elevadoras y carretillas.",
+      "enlace_texto": "Ver cursos y matricularme",
+      "enlace_url": "/formacion/"
     },
     {
       "titulo": "Seguridad Industrial y PRL",

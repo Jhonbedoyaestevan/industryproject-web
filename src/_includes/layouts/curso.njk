@@ -1,0 +1,36 @@
+---
+layout: layouts/base.njk
+---
+<article class="post">
+  <header class="post-hero">
+    <div class="container container-narrow">
+      <nav class="breadcrumb" aria-label="Migas de pan">
+        <a href="/">Inicio</a> <span aria-hidden="true">/</span>
+        <a href="/formacion/">Formación</a>
+      </nav>
+      {% if categoria %}<span class="chip">{{ categoria }}</span>{% endif %}
+      <h1>{{ title }}</h1>
+      {% if duracion or modalidad or certificacion %}
+      <ul class="curso-meta">
+        {% if duracion %}<li><strong>Duración:</strong> {{ duracion }}</li>{% endif %}
+        {% if modalidad %}<li><strong>Modalidad:</strong> {{ modalidad }}</li>{% endif %}
+        {% if certificacion %}<li><strong>Certificación:</strong> {{ certificacion }}</li>{% endif %}
+      </ul>
+      {% endif %}
+    </div>
+  </header>
+  {% if imagen %}
+  <figure class="post-cover container container-narrow">
+    <img src="{{ imagen }}" alt="{{ imagen_alt or '' }}" width="1200" height="675" decoding="async">
+  </figure>
+  {% endif %}
+  <div class="container container-narrow prose">
+    {{ content | safe }}
+  </div>
+  <div class="container container-narrow post-footer">
+    <a class="btn btn-outline" href="/formacion/">← Todos los cursos</a>
+    <a class="btn btn-primary" href="/?curso={{ title | urlencode }}#contacto">Matricularme</a>
+    <a class="btn btn-outline" href="/#contacto">Solicitar información</a>
+  </div>
+</article>
+<script type="application/ld+json">{{ { "@context": "https://schema.org", "@type": "Course", "name": title, "description": resumen, "provider": { "@type": "Organization", "name": site.marca, "sameAs": env.siteUrl } } | dump | replace("<", "\\u003c") | safe }}</script>
