@@ -3,10 +3,9 @@ title: Cursos en Galicia - ITRA de rescate con cuerdas y espacios confinados
 orden: 3
 draft: false
 categoria: ITRA
-resumen: >-
-  Formación Galicia -Pontevedra 
-
-  ITRA en Rope Rescue y Confined Space Rescue, niveles 1 a 3, con certificación Internacional. La formación es presencial y se puede dar en las instalaciones
+resumen: ITRA en Rope Rescue y Confined Space Rescue, niveles 1 a 3, con
+  certificación Internacional. La formación es presencial y se puede dar en las
+  instalaciones
 puntos:
   - Rope Rescue niveles 1 a 3, certificado internacional
   - Confined Space Rescue niveles 1 a 3 certificado internacional
