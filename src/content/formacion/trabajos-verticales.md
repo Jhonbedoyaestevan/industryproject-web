@@ -1,12 +1,11 @@
 ---
-title: "Curso en Galicia - Pòntevedra de Trabajos verticales: Acceso por cuerda"
+title: "Curso en Galicia - Pontevedra de Trabajos verticales: Acceso por cuerda"
 orden: 2
 draft: false
-categoria: "Curso Galicia - Pòntevedra de Trabajos verticales y acceso por cuerda "
-resumen: >-
-  Curso Galicia - Pòntevedra 
-
-  Técnicas de acceso y posicionamiento mediante cuerdas para trabajos en fachadas, estructuras y espacios de difícil acceso y espacios confinados mediante tecnicas de cuerda 
+categoria: "Curso de Trabajos verticales y acceso por cuerda "
+resumen: "Técnicas de acceso y posicionamiento mediante cuerdas para trabajos en
+  fachadas, estructuras y espacios de difícil acceso y espacios confinados
+  mediante tecnicas de cuerda "
 puntos:
   - Montaje de cabecras de trabajo y anclajes
   - Descenso, ascenso, tecnicas  maniobras sobre cuerdas y paso de nudos
