@@ -3,7 +3,7 @@ title: "Curso de Trabajos en espacios confinados - Galicia / Pontevedra "
 orden: 1
 draft: false
 categoria: Curso de Espacios confinados
-resumen: "Curso de espacios confiandos, para trabajadores y empresas del sector
+resumen: "Curso de espacios confinados, para trabajadores y empresas del sector
   metal, construcción y otros. colaboramos con un centro Homologado y
   certificado "
 puntos:
