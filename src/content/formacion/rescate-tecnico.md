@@ -1,5 +1,5 @@
 ---
-title: "Curso de Rescate técnico en altura para equipos URI "
+title: "Curso en GALICIA de Rescate técnico en altura para equipos URI "
 orden: 5
 draft: false
 categoria: "Curso de Rescate para equipos URI Industriales "
