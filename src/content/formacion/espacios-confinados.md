@@ -11,7 +11,7 @@ puntos:
 duracion: 8h
 modalidad: Presencial, en centro de formación o en sus instalaciones
 certificacion: "De aprovechamiento "
-imagen: /assets/uploads/img_8159.heic
+imagen: /assets/uploads/whatsapp-image-2026-11-09-at-01.28.38.jpeg
 imagen_alt: "Trabajo en espacios confinados "
 ---
 ## Estructura y Temario del Curso
