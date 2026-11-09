@@ -1,10 +1,12 @@
 ---
-title: Trabajos en altura y prevención de caídas
+title: Curso en Galicia - Pontevedra de Trabajos en altura y prevención de caídas
 orden: 1
 draft: false
-categoria: Trabajo en altura
-resumen: "Curso deTrabajos en Altura RD/2177/04 8H.  Se puede dar soporte con la
-  unidad movil de formación, tenemos la capacidad de desplazamiento nacional. "
+categoria: Galicia - Pontevedra curso de Trabajo en altura
+resumen: >-
+  Galicia - Pontevedra
+
+  Curso deTrabajos en Altura RD/2177/04 8H.  Se puede dar soporte con la unidad movil de formación, tenemos la capacidad de desplazamiento nacional. 
 puntos:
   - EPI anticaídas y líneas de vida
   - Planificación y plan de rescate
