@@ -3,9 +3,9 @@ title: "Curso de Rescate técnico en altura para equipos URI "
 orden: 5
 draft: false
 categoria: "Curso de Rescate para equipos URI Industriales "
-resumen: "Maniobras de rescate con cuerdas: evacuación, descenso y ascenso de
-  accidentados y trabajo coordinado en equipo. Curso de alta exigencia con
-  simulaciones de alto nivel, ideal para equipos de rescate"
+resumen: "Curso en GALICIA Y PONTEVEDRA. Maniobras de rescate con cuerdas:
+  evacuación, descenso y ascenso de accidentados y trabajo coordinado en equipo.
+  Curso de alta exigencia (disponible in Company)"
 puntos:
   - "Sistemas de cuerdas para rescate avanzado "
   - "Evacuación de accidentados en situaciones extremas "
