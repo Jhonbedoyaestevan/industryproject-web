@@ -1,5 +1,5 @@
 ---
-title: "Curso de Trabajos en espacios confinados - Galicia / Pontevedra "
+title: "Curso de Trabajos en Galicia espacios confinados - Galicia / Pontevedra "
 orden: 4
 draft: false
 categoria: Curso Espacios confinados
