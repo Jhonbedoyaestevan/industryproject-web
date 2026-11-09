@@ -3,8 +3,9 @@ title: "Cursos internacionales: ITRA , CONFINADOS Y TRABAJOS VERTICALES "
 orden: 6
 draft: false
 categoria: "Cursos internacionales en Suramerica "
-resumen: "Cursos de formación internacional ITRA de rescate y formación tecnica
-  especializada en Suramerica ( Colombia, Ecuador, Mexico, Peru y chile. "
+resumen: "Cursos de formación internacional en españa Galicia -  ITRA de rescate
+  y formación tecnica especializada en Suramerica ( España - Galicia, Colombia,
+  Ecuador, Mexico, Peru y chile. "
 puntos:
   - "ITRA, certificación internacional emitida por la ITRA "
   - Entrenamiento y formación de alto nivel con certificación validad en España
