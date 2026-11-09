@@ -1,10 +1,9 @@
 ---
-title: Curso de Trabajos en espacios confinados
+title: "Curso de Trabajos en espacios confinados - Galicia / Pontevedra "
 orden: 4
 draft: false
 categoria: Curso Espacios confinados
-resumen: Identificación de riesgos, control de atmósferas, permisos de trabajo y
-  procedimientos de entrada y rescate en espacios confinados.
+resumen: "Curso de espacios confiandos en Galicia y Pontevedra. "
 puntos:
   - "Control de atmósferas, equipamento de ingreso "
   - Permiso de trabajo y vigilancia
@@ -12,7 +11,7 @@ puntos:
 duracion: 8h
 modalidad: Presencial, en centro de formación o en sus instalaciones
 certificacion: "De aprovechamiento "
-imagen: /assets/uploads/39329cdc-30b6-4e8c-9e80-ddc8eb3f6ee3.jpeg
+imagen: /assets/uploads/img_8163.heic
 imagen_alt: "Trabajo en espacios confinados "
 ---
 ## Estructura y Temario del Curso
