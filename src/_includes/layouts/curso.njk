@@ -10,6 +10,7 @@ layout: layouts/base.njk
       </nav>
       {% if categoria %}<span class="chip">{{ categoria }}</span>{% endif %}
       <h1>{{ title }}</h1>
+      {% if entradilla %}<p class="landing-lead">{{ entradilla }}</p>{% endif %}
       {% if duracion or modalidad or certificacion %}
       <ul class="curso-meta">
         {% if duracion %}<li><strong>Duración:</strong> {{ duracion }}</li>{% endif %}
@@ -26,6 +27,7 @@ layout: layouts/base.njk
   {% endif %}
   <div class="container container-narrow prose">
     {{ content | safe }}
+    {% include "partials/faq.njk" %}
   </div>
   <div class="container container-narrow post-footer">
     <a class="btn btn-outline" href="/formacion/">← Todos los cursos</a>
@@ -33,4 +35,4 @@ layout: layouts/base.njk
     <a class="btn btn-outline" href="/#contacto">Solicitar información</a>
   </div>
 </article>
-<script type="application/ld+json">{{ { "@context": "https://schema.org", "@type": "Course", "name": title, "description": resumen, "provider": { "@type": "Organization", "name": site.marca, "sameAs": env.siteUrl } } | dump | replace("<", "\\u003c") | safe }}</script>
+{# JSON-LD (Course + FAQPage): se genera en el <head> desde «schema»/«schemaAuto» + «faq». #}

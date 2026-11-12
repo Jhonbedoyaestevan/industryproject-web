@@ -1,0 +1,28 @@
+---
+# Página de respaldo para cada redirección de src/_data/redirects.json.
+# GitHub Pages no admite 301 de servidor: la 301 real la aplica Cloudflare
+# (infra/cloudflare/apply.mjs, regla «Single Redirect»). Si esa regla aún no
+# está activa, esta página hace de redirección permanente equivalente para
+# buscadores (meta refresh 0 + canonical) y queda fuera del sitemap.
+pagination:
+  data: redirects
+  size: 1
+  alias: r
+permalink: "{{ r.from }}index.html"
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="robots" content="noindex, follow">
+  <meta http-equiv="refresh" content="0; url={{ r.to }}">
+  <link rel="canonical" href="{{ env.siteUrl }}{{ r.to }}">
+  <title>Página trasladada | {{ site.marca }}</title>
+</head>
+<body>
+  <p>Esta página se ha trasladado a <a href="{{ r.to }}">{{ env.siteUrl }}{{ r.to }}</a>.</p>
+</body>
+</html>

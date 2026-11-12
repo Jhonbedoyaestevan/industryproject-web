@@ -42,7 +42,9 @@
       "titulo": "Trabajos Verticales y Rescate",
       "icono": "cuerda",
       "descripcion": "Ingeniería de accesos por cuerda, mantenimiento en altura y planes de rescate en espacios confinados conforme al RD 2177/04, Ley 31/95 e IRATA/ITRA.",
-      "imagen": "/assets/uploads/68b45332-b3d9-4673-81b6-802a358605b5.jpeg"
+      "imagen": "/assets/uploads/68b45332-b3d9-4673-81b6-802a358605b5.jpeg",
+      "enlace_texto": "Cursos ITRA de rescate industrial",
+      "enlace_url": "/cursos-itra/"
     },
     {
       "titulo": "Curso de Altura, Confinados, Rescate, Verticales, Itra",

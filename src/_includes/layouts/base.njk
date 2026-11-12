@@ -17,6 +17,8 @@
   <title>{{ pageTitle }}</title>
   <meta name="description" content="{{ pageDesc }}">
   <link rel="canonical" href="{{ env.siteUrl }}{{ page.url }}">
+  {%- set ld = schema | structuredData(faq, schemaAuto) %}
+  {% if ld %}<script type="application/ld+json">{{ ld | safe }}</script>{% endif %}
   {% if noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
   <meta property="og:type" content="{{ 'article' if layout == 'layouts/post.njk' else 'website' }}">
   <meta property="og:title" content="{{ pageTitle }}">

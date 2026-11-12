@@ -14,14 +14,21 @@
  *   macOS/Linux: CF_API_TOKEN=... CF_ZONE_ID=... node infra/cloudflare/apply.mjs
  *   Añada --dry-run para ver qué se aplicaría sin cambiar nada.
  *
+ * 3) Redirecciones 301 (Single Redirects, fase http_request_dynamic_redirect) a
+ *    partir de src/_data/redirects.json — la misma fuente que genera las páginas
+ *    de respaldo estáticas en /_site.
+ *
  * Token de API mínimo (My Profile → API Tokens → Custom token), zona industryproject.net:
- *   Zone → Zone Settings → Edit · Zone → Transform Rules → Edit
+ *   Zone → Zone Settings → Edit · Zone → Transform Rules → Edit · Zone → Single Redirect → Edit
  *
  * ⚠ Ejecútelo DESPUÉS de que GitHub Pages haya emitido el certificado y activado
  *   «Enforce HTTPS» (Guía §4). La regla PUT sustituye todas las reglas de cabeceras
- *   de respuesta existentes en la zona.
+ *   de respuesta existentes en la zona, y la de redirecciones sustituye todas las
+ *   «Single Redirects» de la zona (gestiónelas solo desde src/_data/redirects.json).
  * =============================================================================
  */
+import { readFileSync } from "node:fs";
+
 const TOKEN = process.env.CF_API_TOKEN;
 const ZONE = process.env.CF_ZONE_ID;
 const DRY = process.argv.includes("--dry-run");
@@ -106,6 +113,26 @@ const RULESET = {
   ],
 };
 
+// --- Redirecciones 301 (fuente única: src/_data/redirects.json) -------------
+const REDIRECTS = JSON.parse(readFileSync(new URL("../../src/_data/redirects.json", import.meta.url), "utf8"));
+const SAFE_PATH = /^\/[a-z0-9\-\/]*$/; // solo rutas internas simples (evita inyección en la expresión)
+const REDIRECT_RULESET = {
+  description: "Redirecciones 301 industryproject.net",
+  rules: REDIRECTS.map(({ from, to, motivo }) => {
+    if (!SAFE_PATH.test(from) || !SAFE_PATH.test(to)) throw new Error(`Ruta no válida en redirects.json: ${from} → ${to}`);
+    const sinBarra = from.replace(/\/+$/, "");
+    return {
+      description: `301 ${from} → ${to}${motivo ? ` (${motivo})` : ""}`.slice(0, 500),
+      expression: `(http.host in ${HOSTS} and http.request.uri.path in {"${from}" "${sinBarra}" "${from}index.html"})`,
+      action: "redirect",
+      action_parameters: {
+        from_value: { status_code: 301, target_url: { value: `https://${DOMAIN}${to}` }, preserve_query_string: true },
+      },
+      enabled: true,
+    };
+  }),
+};
+
 const SETTINGS = {
   ssl: "strict",                    // Full (strict): valida el certificado de GitHub Pages
   always_use_https: "on",
@@ -135,6 +162,7 @@ async function main() {
   if (DRY) {
     console.log("== Ajustes de zona ==\n", SETTINGS);
     console.log("\n== Ruleset http_response_headers_transform ==\n", JSON.stringify(RULESET, null, 2));
+    console.log("\n== Ruleset http_request_dynamic_redirect ==\n", JSON.stringify(REDIRECT_RULESET, null, 2));
     return;
   }
   for (const [name, value] of Object.entries(SETTINGS)) {
@@ -143,6 +171,9 @@ async function main() {
   }
   await cf("/rulesets/phases/http_response_headers_transform/entrypoint", "PUT", RULESET);
   console.log("✓ Reglas de cabeceras de respuesta aplicadas (2 reglas).");
+  await cf("/rulesets/phases/http_request_dynamic_redirect/entrypoint", "PUT", REDIRECT_RULESET);
+  console.log(`✓ Redirecciones 301 aplicadas (${REDIRECT_RULESET.rules.length}).`);
+  console.log("            curl -sI https://industryproject.net/formacion/cursos-itra/  → 301 + location: /cursos-itra/");
   console.log("\nVerifique:  curl -sI https://industryproject.net | findstr /i \"content-security strict-transport x-frame\"");
   console.log("            (macOS/Linux: curl -sI https://industryproject.net | grep -iE 'content-security|strict-transport|x-frame')");
 }

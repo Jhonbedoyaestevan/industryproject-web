@@ -1,0 +1,12 @@
+{#- Bloque FAQ visible. Fuente: «faq» del front matter (lista de {pregunta, respuesta}).
+    El mismo dato genera el FAQPage JSON-LD del <head>, así el marcado coincide
+    siempre con el texto visible (requisito de Google). -#}
+{% if faq and faq.length %}
+<section class="faq" aria-labelledby="faq-title">
+  <h2 id="faq-title">{{ faq_titulo or "Preguntas frecuentes" }}</h2>
+  {% for f in faq %}{% if f.pregunta and f.respuesta %}
+  <h3>{{ f.pregunta }}</h3>
+  <p>{{ f.respuesta }}</p>
+  {% endif %}{% endfor %}
+</section>
+{% endif %}

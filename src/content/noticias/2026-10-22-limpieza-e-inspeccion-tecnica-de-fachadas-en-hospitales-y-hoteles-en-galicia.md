@@ -1,6 +1,7 @@
 ---
 title: Limpieza e Inspección Técnica de Fachadas en Hospitales y Hoteles en Galicia
 date: 2026-10-23
+lastmod: 2026-11-12
 draft: false
 categoria: Ingeniería
 resumen: Servicios de limpieza técnica, inspección y mantenimiento de fachadas
@@ -9,7 +10,7 @@ resumen: Servicios de limpieza técnica, inspección y mantenimiento de fachadas
 imagen: /assets/uploads/gemini_generated_image_kq75hskq75hskq75.jpeg
 imagen_alt: "Inspección y limpieza Fachada "
 ---
-# Limpieza Técnica e Inspección de Fachadas en Centros Hospitalarios y Hoteles de Galicia
+## Limpieza Técnica e Inspección de Fachadas en Centros Hospitalarios y Hoteles de Galicia
 
 La conservación de envolventes y fachadas en **edificios de uso intensivo como hospitales, clínicas y complejos hoteleros** en Galicia exige altos estándares de higiene, seguridad y continuidad operativa. El clima atlántico, la humedad persistente y la contaminación ambiental aceleran la proliferación de verdín, moho y suciedad estructural que comprometen tanto la imagen corporativa como la durabilidad de los materiales.
 
@@ -22,7 +23,7 @@ En **Industry Project** realizamos trabajos de **mantenimiento, inspección téc
 En entornos sanitarios el descanso de los pacientes es prioritario, mientras que en el sector hotelero la experiencia del cliente no puede verse afectada por ruidos ni estructuras invasivas. Los trabajos verticales eliminan la necesidad de montar andamios, evitando bloqueos de accesos, ruidos de montaje y pérdida de privacidad en habitaciones.
 
 ### 2. Higiene Estructural y Control Sanitario
-En centros sanitarios, la acumulación de excrementos de aves, moho o humedad en repisas y patios interiores constituye un riesgo biológico e higiénico. Ejecutamos desinfecciones, limpiezas de choque y sellados de protección respetando los protocolos ambientales más estrictos.
+En centros sanitarios, la acumulación de excrementos de aves, moho o humedad en repisas y patios interiores constituye un riesgo biológico e higiénico. Ejecutamos desinfecciones, limpiezas de choque y sellados de protección respetando los protocolos ambientales más estrictos. Cuando la intervención incluye patinillos, aljibes, cámaras técnicas o depósitos de cubierta, el personal cuenta además con la [formación en espacios confinados](/formacion/espacios-confinados/) y su procedimiento de vigilancia y rescate.
 
 ### 3. Inspección Técnica y Conservación de Materiales
 Revisamos detalladamente el estado de cerramientos, aplacados de piedra, muros cortina y juntas de dilatación para prevenir desprendimientos y filtraciones de agua, asegurando el cumplimiento de las normativas de seguridad e Inspección Técnica de Edificios (ITE / IEE).
@@ -41,7 +42,7 @@ Revisamos detalladamente el estado de cerramientos, aplacados de piedra, muros c
 ## Ventajas de Contratar a Industry Project en Galicia
 
 1. **Sin interrupción de la actividad:** Operativa limpia, sin maquinaria pesada en las entradas ni ocupación de la vía pública.
-2. **Máxima seguridad normativa:** Intervenciones ejecutadas por técnicos certificados **IRATA / ITRA**, bajo el cumplimiento del **RD 2177/2004** y la Ley 31/1995 de PRL.
+2. **Máxima seguridad normativa:** Intervenciones ejecutadas por técnicos certificados **IRATA / ITRA**, bajo el cumplimiento del **RD 2177/2004** y la Ley 31/1995 de PRL, con todo el equipo acreditado en el [curso de trabajos en altura](/formacion/trabajos-en-altura/) y planes de rescate específicos para cada fachada.
 3. **Respuesta rápida en toda la comunidad gallega:** Atención ágil para urgencias, revisiones preventivas y planes de mantenimiento programado.
 
 

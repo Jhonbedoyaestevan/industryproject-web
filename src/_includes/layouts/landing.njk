@@ -16,9 +16,10 @@ layout: layouts/base.njk
 </section>
 <div class="container container-narrow prose">
   {{ content | safe }}
+  {% include "partials/faq.njk" %}
 </div>
 <div class="container container-narrow post-footer">
   <a class="btn btn-outline" href="/#servicios">← Ver todos los servicios</a>
   <a class="btn btn-primary" href="/#contacto">{{ cta or "Solicitar presupuesto" }}</a>
 </div>
-{% if schema %}<script type="application/ld+json">{{ schema | dump | safe }}</script>{% endif %}
+{# JSON-LD: se genera en el <head> (layouts/base.njk) desde «schema» + «faq». #}

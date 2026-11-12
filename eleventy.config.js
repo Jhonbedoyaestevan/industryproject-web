@@ -59,6 +59,38 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("hostname", (url) => {
     try { return url ? new URL(url).hostname : ""; } catch { return ""; }
   });
+  // --- Datos estructurados (JSON-LD) ----------------------------------------
+  // Une el schema de la página con un FAQPage construido desde «faq» (la misma
+  // fuente que el bloque FAQ visible) y lo serializa escapando <, >, & y
+  // U+2028/2029 para que ningún dato del CMS pueda cerrar el <script>.
+  eleventyConfig.addFilter("structuredData", (schema, faq, auto) => {
+    const base = schema || auto || null;
+    const preguntas = Array.isArray(faq) ? faq.filter((f) => f && f.pregunta && f.respuesta) : [];
+    const faqNode = preguntas.length
+      ? {
+          "@type": "FAQPage",
+          mainEntity: preguntas.map((f) => ({
+            "@type": "Question",
+            name: f.pregunta,
+            acceptedAnswer: { "@type": "Answer", text: f.respuesta },
+          })),
+        }
+      : null;
+    let out = base;
+    if (faqNode) {
+      if (!base) out = { "@context": "https://schema.org", ...faqNode };
+      else if (Array.isArray(base["@graph"])) out = { ...base, "@graph": [...base["@graph"], faqNode] };
+      else {
+        const { "@context": _ctx, ...node } = base;
+        out = { "@context": "https://schema.org", "@graph": [node, faqNode] };
+      }
+    }
+    if (!out) return "";
+    return JSON.stringify(out)
+      .replace(/</g, "\\u003c").replace(/>/g, "\\u003e").replace(/&/g, "\\u0026")
+      .replace(/\u2028/g, "\\u2028").replace(/\u2029/g, "\\u2029");
+  });
+
   // Solo dígitos para enlaces wa.me / tel:
   eleventyConfig.addFilter("digits", (s) => String(s || "").replace(/\D/g, ""));
 
